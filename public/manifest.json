@@ -1,0 +1,17 @@
+{
+  "short_name": "Drawmax",
+  "name": "A website about movies",
+  "description": "Read about movies and download if liked!",
+  "developer": "Reza sadeghzadeh -  front-end  - reza_sadeghzadeh01@yahoo.com",
+  "icons": [
+    {
+      "src": "drawmax.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
