@@ -34,6 +34,7 @@ const Nav = styled.nav`
   position: relative;
   position: absolute;
   top: 0;
+  z-index: 2;
 
   ::after {
     content: "";
@@ -82,7 +83,7 @@ const Nav = styled.nav`
         bottom: -5px;
         right: 0;
         width: 3rem;
-        height: 1px;
+        height: 1.5px;
         background-color: white;
       }
 
@@ -92,7 +93,7 @@ const Nav = styled.nav`
         width: 3rem;
         right: 0;
         bottom: 4px;
-        height: 1px;
+        height: 1.5px;
         background-color: white;
       }
     }
@@ -143,6 +144,20 @@ const Nav = styled.nav`
       }
     }
   }
+  @media screen and (min-width: 800px) {
+    transform: translateY(10px);
+    ::after {
+      background-color: transparent;
+    }
+    ::after {
+      content: "";
+      top: 12rem;
+      background-color: #bbbbbba3;
+      width: 100%;
+      height: 1px;
+    }
+  }
+
   @media screen and (min-width: 1100px) {
     .container {
       padding-left: 8.7rem;
@@ -150,7 +165,7 @@ const Nav = styled.nav`
 
       .menu {
         svg {
-          left: 58%;
+          left: 55%;
         }
         .content {
           margin-right: 8.7rem;
@@ -164,19 +179,6 @@ const Nav = styled.nav`
           }
         }
       }
-    }
-  }
-  @media screen and (min-width: 800px) {
-    transform: translateY(10px);
-    ::after {
-      background-color: transparent;
-    }
-    ::after {
-      content: "";
-      top: 12rem;
-      background-color: #64646467;
-      width: 100%;
-      height: 1px;
     }
   }
 
