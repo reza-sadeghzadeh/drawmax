@@ -1,11 +1,25 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useEffect } from "react";
 import Activity from "../components/Activity";
 import { Main } from "../components/Main";
 import Latest from "../components/Latest";
+import Footer from "../components/common/Footer";
 
-interface Props {}
+interface Props {
+  setLoading: (a: boolean) => void;
+}
 
-function HomePage({}: Props): ReactElement {
+function HomePage({ setLoading }: Props): ReactElement {
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+      console.log("heyyyy");
+
+      return () => {
+        clearTimeout(timeout);
+      };
+    }, 2000);
+  }, []);
+
   return (
     <>
       <Main isHero={true} />
@@ -13,6 +27,7 @@ function HomePage({}: Props): ReactElement {
       <Latest foot={false} />
       <Main isHero={false} />
       <Latest foot={true} />
+      <Footer />
     </>
   );
 }

@@ -10,6 +10,10 @@
   font-family: my-font-regular;
   src: url("./fonts/Montserrat-Regular.woff2");
 }
+@font-face {
+  font-family: my-font-thin;
+  src: url("./fonts/Montserrat-ExtraLight.woff2");
+}
 
 * {
   padding: 0;

@@ -83,7 +83,7 @@ export default function Activity({ foot }: Props): ReactElement {
   ];
 
   return (
-    <Inherit>
+    <Inherit className="flex-center">
       <div className="container flex-center">
         {!foot && (
           <>
@@ -122,6 +122,7 @@ export const Inherit = styled.section`
 
     &__header {
       margin-bottom: 3.5rem;
+      margin-left: 2rem;
 
       img {
         margin-right: 20px;
@@ -177,6 +178,12 @@ export const Inherit = styled.section`
           width: 1300px;
         }
       }
+    }
+  }
+
+  @media screen and (min-width: 2000px) {
+    .container {
+      width: 2000px;
     }
   }
 `;

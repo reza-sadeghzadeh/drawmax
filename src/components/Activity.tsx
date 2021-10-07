@@ -97,7 +97,7 @@ export default function Activity({}: Props): ReactElement {
   ];
 
   return (
-    <Div>
+    <Div className="flex-center">
       <div className="container flex-center">
         <div className="container__header flex-center">
           {/* use Environment variables for production instead of absolute URLs */}
@@ -118,25 +118,29 @@ export default function Activity({}: Props): ReactElement {
         <div className="desktop-swipe">
           <Swiper
             breakpoints={{
-              1100: {
+              1110: {
                 slidesPerView: 4,
               },
-              1250: {
+              1300: {
+                slidesPerView: 4.5,
+              },
+              1400: {
                 slidesPerView: 5,
               },
               1500: {
+                slidesPerView: 5.5,
+              },
+              1700: {
                 slidesPerView: 6,
               },
-              1750: {
-                slidesPerView: 7,
-              },
-              1920: {
-                slidesPerView: 8,
+              1800: {
+                width: 1800,
+                slidesPerView: 6.5,
               },
             }}
             className="my-swiper-container flex-center"
             spaceBetween={50}
-            slidesPerView={4}
+            slidesPerView={4.3}
             pagination={{ clickable: true }}
           >
             {data.map((d) => (
@@ -170,6 +174,11 @@ const Div = styled(Inherit)`
       width: 100vw;
       transform: translateX(-5rem);
       overflow: hidden;
+    }
+  }
+  @media screen and (min-width: 2000px) {
+    .container {
+      width: 2000px;
     }
   }
 `;
