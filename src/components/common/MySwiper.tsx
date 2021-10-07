@@ -81,23 +81,20 @@ const Sswiper = styled(Swiper)`
   z-index: 5;
   justify-content: flex-start;
   padding-bottom: 3rem;
-  padding-left: 35px;
+  padding-left: 50px;
 
   @media screen and (min-width: 600px) {
-    padding-left: 60px;
+    padding-left: 12rem;
   }
 
   .my-siwper {
-    padding: 0 2rem;
+    padding: 0 5rem;
   }
-
   .btn-holder {
     margin: 0 3rem;
   }
-
   button {
     margin: 0;
-
     &.active {
     }
   }

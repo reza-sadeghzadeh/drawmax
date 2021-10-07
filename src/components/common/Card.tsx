@@ -34,13 +34,13 @@ export const Card: React.FC<Props> = ({ movie }) => {
 };
 
 const Div = styled.div`
-  margin: 3rem 0rem;
-  transform: translateX(-1rem);
+  margin: 3rem 1rem;
   cursor: pointer;
+  padding: 0;
 
   img {
-    width: 250px;
-    height: 400px;
+    width: 176px;
+    height: 284px;
     border-radius: 30px;
     object-fit: cover;
   }
@@ -49,14 +49,11 @@ const Div = styled.div`
     margin-top: 1.5 rem;
     margin-bottom: 1rem;
     font-family: my-font-bold;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     transition: 0.2s ease all;
   }
 
   :hover {
-    h5 {
-      color: #ff3131;
-    }
     .bottom-title {
       opacity: 1;
     }
@@ -85,15 +82,13 @@ const Div = styled.div`
       }
     }
   }
-  @media screen and (min-width: 450px) {
-    margin: 3rem 0.8rem;
-    img {
-      width: 176px;
-      height: 286px;
-    }
-  }
+
   @media screen and (min-width: 1100px) {
-    margin: 3rem 0.8rem;
+    margin: 3rem 2rem;
+
+    h5 {
+      font-size: 1.8rem;
+    }
     img {
       width: 219px;
       height: 354px;

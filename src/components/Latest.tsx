@@ -1,10 +1,8 @@
-/* eslint-disable no-restricted-globals */
 import React, { ReactElement } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Card } from "./common/Card";
 import MySwiper from "./common/MySwiper";
-import { Inherit } from "./Latest";
 
 interface Props {}
 
@@ -80,31 +78,19 @@ export default function Activity({}: Props): ReactElement {
       imgSrc: "/images/movie1.png",
       scores: { imdb: 4.5, rt: 123 },
     },
-    {
-      id: 11,
-      title: "Jungle Cruise",
-      year: 2021,
-      imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
-    },
-    {
-      id: 12,
-      title: "Jungle Cruise",
-      year: 2021,
-      imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
-    },
   ];
 
   return (
-    <Div>
+    <Inherit>
       <div className="container flex-center">
         <div className="container__header flex-center">
           {/* use Environment variables for production instead of absolute URLs */}
           <img src="/icons/Activity.svg" />
-          <h4> Latest Movies</h4>
+          <h4> Latest Series </h4>
         </div>
-        <MySwiper />
+        <div className="btn-slide-container">
+          <MySwiper />
+        </div>
         <div className="divider" />
         <div className="card-holder flex-center">
           <ul className="flex-center">
@@ -115,61 +101,76 @@ export default function Activity({}: Props): ReactElement {
             ))}
           </ul>
         </div>
-        <div className="desktop-swipe">
-          <Swiper
-            breakpoints={{
-              1100: {
-                slidesPerView: 4,
-              },
-              1250: {
-                slidesPerView: 5,
-              },
-              1500: {
-                slidesPerView: 6,
-              },
-              1750: {
-                slidesPerView: 7,
-              },
-              1920: {
-                slidesPerView: 8,
-              },
-            }}
-            className="my-swiper-container flex-center"
-            spaceBetween={50}
-            slidesPerView={4}
-            pagination={{ clickable: true }}
-          >
-            {data.map((d) => (
-              <SwiperSlide className="swiper-slide my-siwper flex-center">
-                <Card movie={d} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
       </div>
-    </Div>
+    </Inherit>
   );
 }
 
-const Div = styled(Inherit)`
-  margin-top: 5rem;
+export const Inherit = styled.section`
+  .container {
+    margin-top: 20px;
+    overflow-x: hidden;
+    padding-bottom: 5rem;
+    flex-direction: column;
+    align-items: flex-start;
 
-  .desktop-swipe {
-    display: none;
-  }
+    &__header {
+      margin-bottom: 3.5rem;
 
-  @media screen and (min-width: 1000px) {
-    .card-holder {
-      display: none;
+      img {
+        margin-right: 20px;
+      }
     }
 
-    .desktop-swipe {
-      padding-top: 3rem;
-      padding-left: 10rem;
-      display: flex;
-      width: 100vw;
-      transform: translateX(-5rem);
-      overflow: hidden;
+    .divider {
+      overflow-x: hidden;
+      transform: translateX(-30px);
+      width: 130%;
+      height: 0.3px;
+      background-color: #e1e1e1;
+      margin-bottom: 2.5rem;
+      opacity: 0.3;
+    }
+
+    .card-holder ul {
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    @media screen and (min-width: 380px) {
+      &__header {
+        padding-left: 3.3rem;
+      }
+    }
+
+    @media screen and (min-width: 1100px) {
+      .btn-slide-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      &__header {
+        padding-left: 8.7rem;
+      }
+
+      .divider {
+        transform: translateY(-80px) translateX(-100px);
+      }
+      .btn-holder {
+        transform: translateY(25px);
+      }
+    }
+
+    @media screen and (min-width: 1300px) {
+      .card-holder {
+        width: 100%;
+
+        ul {
+          width: 1300px;
+        }
+      }
     }
   }
 `;

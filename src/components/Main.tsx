@@ -170,7 +170,7 @@ const Div = styled.main`
       p.container__description {
         font-size: 1.4rem;
         max-width: 300px;
-        line-height: 2rem;
+        /* line-height: 2rem; */
       }
     }
 
