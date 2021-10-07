@@ -1,0 +1,9 @@
+Serving public files like icons and images which won't change in a static page,
+Also the latest html file that will be sent to the client is accesilble here.
+
+this is what you can do:
+ - Put headers (meta tags, links, title,...)
+ - change the favicon
+ - etc
+
+

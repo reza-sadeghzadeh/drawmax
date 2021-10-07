@@ -108,7 +108,7 @@ const Nav = styled.nav`
     }
   }
 
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 950px) {
     height: 134px;
 
     .container {
@@ -125,7 +125,7 @@ const Nav = styled.nav`
       .menu {
         svg {
           top: 12px;
-          left: 60%;
+          left: 55%;
         }
         .content {
           display: flex;
@@ -144,7 +144,7 @@ const Nav = styled.nav`
       }
     }
   }
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 950px) {
     transform: translateY(10px);
     ::after {
       background-color: transparent;
@@ -152,7 +152,7 @@ const Nav = styled.nav`
     ::after {
       content: "";
       top: 12rem;
-      background-color: #bbbbbba3;
+      background-color: #c4c4c4;
       width: 100%;
       height: 1px;
     }

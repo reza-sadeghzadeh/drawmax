@@ -62,6 +62,12 @@ export const Main = (props: Props) => {
           <CgScrollV />
           <h2>scroll down!</h2>
         </div>
+        <div className="slider">
+          <div className="slide"></div>
+          <div className="slide"></div>
+          <div className="slide active"></div>
+          <div className="slide"></div>
+        </div>
       </div>
     </Div>
   );
@@ -112,6 +118,10 @@ const Div = styled.main`
       left: 0;
     }
 
+    .slider {
+      display: none;
+    }
+
     &__movie-details {
       z-index: 2;
       flex-direction: column;
@@ -128,15 +138,9 @@ const Div = styled.main`
           font-size: 1.4rem;
         }
 
-        span {
-          font-size: 1.4rem;
-          margin-right: 1rem;
-          font-family: my-font-bold;
-
-          &#detail {
-            color: #f50505;
-            margin-left: 0.2rem;
-          }
+        span#detail {
+          color: #f50505;
+          margin-left: 0.2rem;
         }
 
         .divider {
@@ -253,6 +257,12 @@ const Div = styled.main`
       justify-content: center;
       min-height: 100vh;
 
+      .topside-details {
+        span {
+          margin-right: 1.6rem;
+        }
+      }
+
       h2.container__title {
         font-size: 4.7rem;
       }
@@ -261,6 +271,27 @@ const Div = styled.main`
         font-size: 1.4rem;
         max-width: 500px;
       }
+
+      .slider {
+        position: absolute;
+        right: 100px;
+        bottom: 50px;
+        display: flex;
+        z-index: 3;
+
+        .slide {
+          width: 54px;
+          height: 3px;
+          border-radius: 30px;
+          margin: 0 5px;
+          background-color: #555555;
+          position: relative;
+
+          &.active {
+            background-color: #c4c4c4;
+          }
+        }
+      }
     }
   }
 
@@ -268,7 +299,7 @@ const Div = styled.main`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #0000007b;
+    background-color: #141010;
 
     .container {
       width: 2000px;

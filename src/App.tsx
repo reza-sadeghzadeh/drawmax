@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
 import { Header } from "./components/common/Header";
-import { Main } from "./components/Main";
+import Home from "./pages/HomePage";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Route exact path="/" component={Main} />
+          <Route exact path="/" component={Home} />
         </Switch>
       </BrowserRouter>
     </>
