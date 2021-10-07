@@ -4,9 +4,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Card } from "./common/Card";
 import MySwiper from "./common/MySwiper";
 
-interface Props {}
+interface Props {
+  foot: boolean;
+}
 
-export default function Activity({}: Props): ReactElement {
+export default function Activity({ foot }: Props): ReactElement {
   let data = [
     {
       id: 1,
@@ -83,15 +85,19 @@ export default function Activity({}: Props): ReactElement {
   return (
     <Inherit>
       <div className="container flex-center">
-        <div className="container__header flex-center">
-          {/* use Environment variables for production instead of absolute URLs */}
-          <img src="/icons/Activity.svg" />
-          <h4> Latest Series </h4>
-        </div>
-        <div className="btn-slide-container">
-          <MySwiper />
-        </div>
-        <div className="divider" />
+        {!foot && (
+          <>
+            <div className="container__header flex-center">
+              {/* use Environment variables for production instead of absolute URLs */}
+              <img src="/icons/Activity.svg" />
+              <h4> Latest Series </h4>
+            </div>
+            <div className="btn-slide-container">
+              <MySwiper />
+            </div>
+            <div className="divider" />
+          </>
+        )}
         <div className="card-holder flex-center">
           <ul className="flex-center">
             {data.map((d) => (

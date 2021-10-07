@@ -1,13 +1,15 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { createGlobalStyle, css } from "styled-components";
 import { BsFillClockFill } from "react-icons/bs";
 import { GoPlay } from "react-icons/go";
 import { BsFillPlusSquareFill } from "react-icons/bs";
 import { CgScrollV } from "react-icons/cg";
 
-interface Props {}
+interface Props {
+  isHero: boolean;
+}
 
-export const Main = (props: Props) => {
+export const Main = ({ isHero }: Props) => {
   const moive = {
     durtaion: 93,
     score: {
@@ -18,35 +20,46 @@ export const Main = (props: Props) => {
     episode: 14,
     title: "The Walking Dead: 2021",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate inventore maiores. Nisi, dolore. Inventore et doloribus in, dolorem totam officia magnam eum quibusdam, magni harum perspiciatis deleniti saepe, delectus quam. Minus?",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
   };
 
   return (
-    <Div className="flex-center">
+    <Div id="land-hero" className="flex-center" isHero={isHero}>
       <div className="container flex-center ">
         <div className="container__movie-details flex-center ">
           <div className="topside-details flex-center">
-            <BsFillClockFill />
-            <h4>
-              Duration: {(moive.durtaion / 60).toFixed(0)}hr{" "}
-              {moive.durtaion % 60} min
-            </h4>
+            {isHero && (
+              <>
+                <BsFillClockFill />
+                <h4>
+                  Duration: {(moive.durtaion / 60).toFixed(0)}hr{" "}
+                  {moive.durtaion % 60} min
+                </h4>
+              </>
+            )}
           </div>
           <div className="topside-details flex-center">
             <img src="/icons/Rotten Tomatoes Icon.svg" alt="Rotten Tomatoes" />
             <span>{moive.score.rottenTomato}</span>
             <img id="imdb" src="/icons/IMDB.svg" alt="IMDB" />
             <span>{moive.score.imdb}</span>
-            <div className="divider"></div>
-            <h4>
-              Season: <span id="detail"> {moive.season}</span>
-            </h4>
-            <h4>
-              Session: <span id="detail"> {moive.episode}</span>
-            </h4>
+
+            {isHero && (
+              <>
+                <div className="divider"></div>
+                <h4>
+                  Season: <span id="detail"> {moive.season}</span>
+                </h4>
+                <h4>
+                  Session: <span id="detail"> {moive.episode}</span>
+                </h4>
+              </>
+            )}
           </div>
           <h2 className="container__title">{moive.title}</h2>
-          <p className="container__description">{moive.description}</p>
+          {isHero && (
+            <p className="container__description">{moive.description}</p>
+          )}
         </div>
         <div className="container__button flex-center">
           <button className="active flex-center">
@@ -58,22 +71,30 @@ export const Main = (props: Props) => {
             Watch Later!
           </button>
         </div>
-        <div id="scroll">
-          <CgScrollV />
-          <h2>scroll down!</h2>
-        </div>
-        <div className="slider">
-          <div className="slide"></div>
-          <div className="slide"></div>
-          <div className="slide active"></div>
-          <div className="slide"></div>
-        </div>
+        {isHero && (
+          <div id="scroll">
+            <CgScrollV />
+            <h2>scroll down!</h2>
+          </div>
+        )}
+        {isHero && (
+          <div className="slider">
+            <div className="slide"></div>
+            <div className="slide"></div>
+            <div className="slide active"></div>
+            <div className="slide"></div>
+          </div>
+        )}
       </div>
     </Div>
   );
 };
 
-const Div = styled.main`
+type DivProps = {
+  isHero: boolean;
+};
+
+const Div = styled.main<DivProps>`
   width: 100%;
 
   .container {
@@ -86,6 +107,7 @@ const Div = styled.main`
     padding-top: 15rem;
     /* padding-bottom: 10rem; */
     color: white;
+
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -109,7 +131,7 @@ const Div = styled.main`
       z-index: 1;
       height: 100%;
       background: url("/images/hero.png");
-      filter: blur(3px);
+      filter: blur(2.5px);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: 40% 50%;
@@ -293,6 +315,45 @@ const Div = styled.main`
         }
       }
     }
+    ${(p) =>
+      !p.isHero
+        ? css`
+            width: clamp(300px, 90%, 1920px);
+            margin-top: 3rem;
+            height: 440px;
+            overflow: hidden;
+            padding: 7rem 10rem;
+            border-radius: 50px;
+            /* padding-top: 0; */
+
+            ::after,
+            ::before {
+              height: 440px;
+              border-radius: 50px;
+            }
+
+            @media screen and (min-width: 800px) {
+              width: clamp(300px, 90%, 1920px);
+              height: 440px;
+
+              padding: 0 5rem;
+              padding-top: 9rem;
+            }
+
+            @media screen and (min-width: 1000px) {
+              height: 440px;
+              overflow: hidden;
+              justify-content: flex-start;
+              width: clamp(300px, 90%, 1920px);
+              padding: 8rem 8.7rem;
+            }
+
+            @media screen and (min-width: 1101px) {
+              min-height: 440px;
+              margin-bottom: 3rem;
+            }
+          `
+        : ""}
   }
 
   @media screen and (min-width: 2000px) {

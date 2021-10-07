@@ -8,11 +8,11 @@ interface Props {}
 function HomePage({}: Props): ReactElement {
   return (
     <>
-      <Main />
+      <Main isHero={true} />
       <Activity />
-      <Latest />
-      <Main />
-      <Latest />
+      <Latest foot={false} />
+      <Main isHero={false} />
+      <Latest foot={true} />
     </>
   );
 }
