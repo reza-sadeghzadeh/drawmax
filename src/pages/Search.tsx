@@ -1,11 +1,83 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useRef } from "react";
+import { RiSearchLine } from "react-icons/ri";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
+import { Card } from "../components/common/Card";
 
 interface Props {}
 
 function Search({}: Props): ReactElement {
   const history = useHistory();
+
+  const inpRef = useRef<HTMLInputElement>(null);
+
+  const handleSearch = () => {
+    console.log("searching for ", inpRef.current?.value);
+    inpRef.current!.value = "";
+  };
+
+  const suggestion = [
+    {
+      id: 1,
+      season: 2,
+      episode: 6,
+      title: "Jungle Cruise",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+      year: 2021,
+      duration: 99,
+      imgSrc: "/images/movie1.png",
+      score: { imdb: 4.5, rt: 123 },
+    },
+    {
+      id: 2,
+      season: 2,
+      episode: 6,
+      title: "Jungle Cruise",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+      duration: 99,
+      year: 2021,
+      imgSrc: "/images/movie1.png",
+      score: { imdb: 4.5, rt: 123 },
+    },
+    {
+      id: 3,
+      season: 2,
+      episode: 6,
+      title: "Jungle Cruise",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+      duration: 99,
+      year: 2021,
+      imgSrc: "/images/movie1.png",
+      score: { imdb: 4.5, rt: 123 },
+    },
+    {
+      id: 4,
+      season: 2,
+      episode: 6,
+      title: "Jungle Cruise",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+      duration: 99,
+      year: 2021,
+      imgSrc: "/images/movie1.png",
+      score: { imdb: 4.5, rt: 123 },
+    },
+    {
+      id: 5,
+      season: 2,
+      episode: 6,
+      title: "Jungle Cruise",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+      duration: 99,
+      year: 2021,
+      imgSrc: "/images/movie1.png",
+      score: { imdb: 4.5, rt: 123 },
+    },
+  ];
 
   return (
     <Div>
@@ -28,14 +100,26 @@ function Search({}: Props): ReactElement {
             fill="white"
           />
         </svg>
-        <h3>Search in out database</h3>
+        <h3>Search in our database</h3>
         <div className="search">
+          <RiSearchLine onClick={() => handleSearch()} color="white" />
           <input
+            ref={inpRef}
             autoComplete="off"
+            placeholder="What you wanna watch....?"
             type="text"
             name="input-search"
             id="search"
           />
+        </div>
+        <div className="suggest">
+          <ul className="flex-center">
+            {suggestion.map((s) => (
+              <li>
+                <Card movie={suggestion[0]} />
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </Div>
@@ -54,6 +138,7 @@ const Div = styled.section`
   position: absolute;
 
   .container {
+    overflow: hidden;
     flex-direction: column;
     padding-left: 2rem;
     align-items: flex-start;
@@ -72,16 +157,67 @@ const Div = styled.section`
     .search {
       margin-top: 2rem;
       width: clamp(300px, 90%, 480px);
+      position: relative;
+      margin-bottom: 5rem;
+
+      ::after {
+        content: "";
+        background-color: white;
+        opacity: 0.5;
+        position: absolute;
+        width: 120vw;
+        bottom: -30px;
+        height: 1px;
+        left: -100px;
+      }
+
+      svg {
+        top: calc(2.5rem - 8.5px);
+        right: 2rem;
+        width: 17px;
+        cursor: pointer;
+        height: 17px;
+        background-color: #343434;
+        /* color: white; */
+        /* padding: 1rem 2rem; */
+      }
 
       input {
         font-size: 1.4rem;
         width: 100%;
+        height: 5rem;
         padding: 2rem 3rem;
         border-radius: 500px;
         background-color: #343434;
         border: 0;
         outline: none;
         color: white;
+
+        ::placeholder {
+          color: white;
+          opacity: 0.5;
+        }
+      }
+    }
+    .suggest {
+      ul {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+    }
+
+    @media screen and (min-width: 1100px) {
+      .search {
+        svg {
+          top: calc(2.35rem - 8.5px);
+        }
+        input {
+          height: 4.7rem;
+        }
+      }
+
+      h3 {
+        font-size: 2.4rem;
       }
     }
   }
