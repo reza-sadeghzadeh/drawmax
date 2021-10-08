@@ -63,6 +63,8 @@ const Div = styled.section`
       background-repeat: no-repeat;
       bottom: 4rem;
       border-radius: 50%;
+      border: 0;
+      outline: none;
       background-position: 0 0, 100% 0, 0 100%, 100% 100%;
       background-size: 50% 50%, 50% 50%, 50% 50%, 50% 50%;
       background-image: linear-gradient(#f50505, #f50505),

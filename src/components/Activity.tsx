@@ -12,89 +12,151 @@ export default function Activity({}: Props): ReactElement {
   let data = [
     {
       id: 1,
+      season: 2,
+      episode: 6,
       title: "Jungle Cruise",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
       year: 2021,
+      duration: 99,
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 2,
+      season: 2,
+      episode: 6,
       title: "Jungle Cruise",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+      duration: 99,
       year: 2021,
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 3,
+      season: 2,
+      episode: 6,
       title: "Jungle Cruise",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+      duration: 99,
       year: 2021,
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 4,
+      season: 2,
+      episode: 6,
       title: "Jungle Cruise",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+      duration: 99,
       year: 2021,
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 5,
+      season: 2,
+      episode: 6,
       title: "Jungle Cruise",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+      duration: 99,
       year: 2021,
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 6,
+      season: 2,
+      episode: 6,
       title: "Jungle Cruise",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+      duration: 99,
       year: 2021,
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 7,
+      season: 2,
+      episode: 6,
       title: "Jungle Cruise",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+      duration: 99,
       year: 2021,
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 8,
+      season: 2,
+      episode: 6,
       title: "Jungle Cruise",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+      duration: 99,
       year: 2021,
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 9,
+      season: 2,
+      episode: 6,
       title: "Jungle Cruise",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+      duration: 99,
       year: 2021,
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 10,
+      season: 2,
+      episode: 6,
       title: "Jungle Cruise",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+      duration: 99,
       year: 2021,
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 11,
+      season: 2,
+      episode: 6,
       title: "Jungle Cruise",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+      duration: 99,
       year: 2021,
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 12,
+      season: 2,
+      episode: 6,
       title: "Jungle Cruise",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+      duration: 99,
       year: 2021,
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
   ];
+
+  const genres = ["Animations", "Action", "Horror", "Biography", "Drama"];
 
   return (
     <Div className="flex-center">
@@ -104,7 +166,7 @@ export default function Activity({}: Props): ReactElement {
           <img src="/icons/Activity.svg" />
           <h4> Latest Movies</h4>
         </div>
-        <MySwiper />
+        <MySwiper data={genres} cast={false} />
         <div className="divider" />
         <div className="card-holder flex-center">
           <ul className="flex-center">
@@ -141,10 +203,12 @@ export default function Activity({}: Props): ReactElement {
             className="my-swiper-container flex-center"
             spaceBetween={50}
             slidesPerView={4.3}
-            pagination={{ clickable: true }}
           >
             {data.map((d) => (
-              <SwiperSlide className="swiper-slide my-siwper flex-center">
+              <SwiperSlide
+                key={d.id}
+                className="swiper-slide my-siwper flex-center"
+              >
                 <Card movie={d} />
               </SwiperSlide>
             ))}
@@ -169,9 +233,9 @@ const Div = styled(Inherit)`
 
     .desktop-swipe {
       padding-top: 3rem;
-      padding-left: 10rem;
+      padding-left: 10rem; //make 5rem
+      width: 100vw; // remove
       display: flex;
-      width: 100vw;
       transform: translateX(-5rem);
       overflow: hidden;
     }

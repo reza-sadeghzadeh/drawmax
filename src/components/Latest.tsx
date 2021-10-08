@@ -1,6 +1,5 @@
 import React, { ReactElement } from "react";
 import styled, { css } from "styled-components";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Card } from "./common/Card";
 import MySwiper from "./common/MySwiper";
 
@@ -13,74 +12,135 @@ export default function Activity({ foot }: Props): ReactElement {
     {
       id: 1,
       title: "Jungle Cruise",
+      season: 4,
+      episode: 6,
       year: 2021,
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 2,
       title: "Jungle Cruise",
+      season: 4,
+      episode: 6,
       year: 2021,
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+
+      duration: 135,
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 3,
       title: "Jungle Cruise",
+      season: 4,
+      episode: 6,
       year: 2021,
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+
+      duration: 135,
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 4,
       title: "Jungle Cruise",
+      season: 4,
+      episode: 6,
       year: 2021,
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+
+      duration: 135,
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 5,
       title: "Jungle Cruise",
+      season: 4,
+      episode: 6,
       year: 2021,
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+
+      duration: 135,
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 6,
       title: "Jungle Cruise",
+      season: 4,
+      episode: 6,
       year: 2021,
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+
+      duration: 135,
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 7,
       title: "Jungle Cruise",
+      season: 4,
+      episode: 6,
       year: 2021,
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+
+      duration: 135,
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 8,
       title: "Jungle Cruise",
+      season: 4,
+      episode: 6,
       year: 2021,
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+
+      duration: 135,
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 9,
       title: "Jungle Cruise",
+      season: 4,
+      episode: 6,
       year: 2021,
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+
+      duration: 135,
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 10,
       title: "Jungle Cruise",
+      season: 4,
+      episode: 6,
       year: 2021,
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+
+      duration: 135,
       imgSrc: "/images/movie1.png",
-      scores: { imdb: 4.5, rt: 123 },
+      score: { imdb: 4.5, rt: 123 },
     },
   ];
+
+  const genres = ["Animations", "Action", "Horror", "Biography", "Drama"];
 
   return (
     <Inherit className="flex-center">
@@ -93,7 +153,7 @@ export default function Activity({ foot }: Props): ReactElement {
               <h4> Latest Series </h4>
             </div>
             <div className="btn-slide-container">
-              <MySwiper />
+              <MySwiper data={genres} cast={false} />
             </div>
             <div className="divider" />
           </>
@@ -101,9 +161,7 @@ export default function Activity({ foot }: Props): ReactElement {
         <div className="card-holder flex-center">
           <ul className="flex-center">
             {data.map((d) => (
-              <li key={d.id}>
-                <Card movie={d} />
-              </li>
+              <li key={d.id}>{<Card movie={d} />}</li>
             ))}
           </ul>
         </div>

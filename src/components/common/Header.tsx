@@ -1,15 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { RiSearchLine } from "react-icons/ri";
 
 export const Header = () => {
+  const history = useHistory();
+
   return (
     <Nav className="flex-center">
       <div className="container flex-center">
-        <img src="/title.svg" alt="logo" />
+        <img onClick={() => history.push("/")} src="/title.svg" alt="logo" />
         <div className="menu">
-          <RiSearchLine color="white" />
+          <RiSearchLine color="white" onClick={() => history.push("/search")} />
           <div className="content flex-center">
             <NavLink exact activeClassName="active" to="/">
               Home
@@ -60,6 +62,7 @@ const Nav = styled.nav`
       opacity: 1;
       width: 88px;
       height: 19px;
+      cursor: pointer;
     }
 
     .menu {

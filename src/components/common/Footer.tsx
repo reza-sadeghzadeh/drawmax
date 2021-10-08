@@ -10,6 +10,7 @@ export default function Footer({}: Props): ReactElement {
       <div className="container flex-center">
         <LogoAndDesc />
         <svg
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           id="rocket"
           width="71"
           height="71"
@@ -38,6 +39,7 @@ const Div = styled.footer`
     position: relative;
 
     svg#rocket {
+      cursor: pointer;
       width: 50px;
       height: 50px;
       position: absolute;

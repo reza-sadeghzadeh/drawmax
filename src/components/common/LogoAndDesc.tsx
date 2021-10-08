@@ -34,8 +34,41 @@ const Div = styled.div`
     width: 100px;
     height: 30px;
 
-    path {
+    path:nth-child(1) {
+      animation: blink 1s ease-out 0s 1 alternate;
       fill: #fff;
+    }
+    path:nth-child(2) {
+      animation: blink 1s ease-out 0.2s 1 alternate;
+      fill: #fff;
+    }
+    path:nth-child(3) {
+      animation: blink 1s ease-out 0.4s 1 alternate;
+      fill: #fff;
+    }
+    path:nth-child(4) {
+      animation: blink 1s ease-out 0.6s 1 alternate;
+      fill: #fff;
+    }
+    path:nth-child(5) {
+      animation: blink 1s ease-out 0.8s 1 alternate;
+      fill: #fff;
+    }
+    path:nth-child(6) {
+      animation: blink 1s ease-out 1s 1 alternate;
+      fill: #fff;
+    }
+
+    @keyframes blink {
+      0% {
+        fill: white;
+      }
+      50% {
+        fill: red;
+      }
+      100% {
+        fill: white;
+      }
     }
   }
   h5 {

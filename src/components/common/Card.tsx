@@ -1,21 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 import LazyLoad from "react-lazyload";
+import { useLocation, useHistory } from "react-router-dom";
 
 interface Props {
   movie: {
     id: number;
     title: string;
     year: number;
+    duration?: number;
+    season: number;
+    episode: number;
+    description: string;
     imgSrc: string;
-    scores: { imdb: number; rt: number };
+    score: { imdb: number; rt: number };
   };
 }
 
 export const Card: React.FC<Props> = ({ movie }) => {
+  const history = useHistory();
   //instead of hardcoding, use movie prop
   return (
-    <Div>
+    <Div onClick={() => history.push(`/movie/${movie.id}`)}>
       <LazyLoad height={300} offset={100} once>
         <img src="images/movie1.png" alt="movie image" />
       </LazyLoad>
@@ -92,7 +98,6 @@ const Div = styled.div`
     img {
       width: 219px;
       height: 354px;
-      cursor: grab;
     }
   }
 `;

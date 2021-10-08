@@ -1,30 +1,18 @@
 import React from "react";
-import styled, { createGlobalStyle, css } from "styled-components";
+import styled, { css } from "styled-components";
 import { BsFillClockFill } from "react-icons/bs";
 import { GoPlay } from "react-icons/go";
 import { BsFillPlusSquareFill } from "react-icons/bs";
 import { CgScrollV } from "react-icons/cg";
 
-interface Props {
-  isHero: boolean;
-}
-
-export const Main = ({ isHero }: Props) => {
-  const moive = {
-    durtaion: 93,
-    score: {
-      rottenTomato: 140,
-      imdb: 9.5,
-    },
-    season: 5,
-    episode: 14,
-    title: "The Walking Dead: 2021",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
-  };
-
+export const Main = ({ movie, isHero, slug }) => {
   return (
-    <Div id="land-hero" className="flex-center" isHero={isHero}>
+    <Div
+      isHero={isHero}
+      imgSrc={movie.imgSrc}
+      id="land-hero"
+      className="flex-center"
+    >
       <div className="container flex-center ">
         <div className="container__movie-details flex-center ">
           <div className="topside-details flex-center">
@@ -32,33 +20,33 @@ export const Main = ({ isHero }: Props) => {
               <>
                 <BsFillClockFill />
                 <h4>
-                  Duration: {(moive.durtaion / 60).toFixed(0)}hr{" "}
-                  {moive.durtaion % 60} min
+                  Duration: {(movie.duration / 60).toFixed(0)}hr{" "}
+                  {movie.duration % 60} min
                 </h4>
               </>
             )}
           </div>
           <div className="topside-details flex-center">
             <img src="/icons/Rotten Tomatoes Icon.svg" alt="Rotten Tomatoes" />
-            <span>{moive.score.rottenTomato}</span>
+            <span>{movie.score.rt}</span>
             <img id="imdb" src="/icons/IMDB.svg" alt="IMDB" />
-            <span>{moive.score.imdb}</span>
+            <span>{movie.score.imdb}</span>
 
             {isHero && (
               <>
                 <div className="divider"></div>
                 <h4>
-                  Season: <span id="detail"> {moive.season}</span>
+                  Season: <span id="detail"> {movie.season}</span>
                 </h4>
                 <h4>
-                  Session: <span id="detail"> {moive.episode}</span>
+                  Session: <span id="detail"> {movie.episode}</span>
                 </h4>
               </>
             )}
           </div>
-          <h2 className="container__title">{moive.title}</h2>
+          <h2 className="container__title">{movie.title}</h2>
           {isHero && (
-            <p className="container__description">{moive.description}</p>
+            <p className="container__description">{movie.description}</p>
           )}
         </div>
         <div className="container__button flex-center">
@@ -71,13 +59,13 @@ export const Main = ({ isHero }: Props) => {
             Watch Later!
           </button>
         </div>
-        {isHero && (
+        {isHero && !slug && (
           <div id="scroll">
             <CgScrollV />
             <h2>scroll down!</h2>
           </div>
         )}
-        {isHero && (
+        {isHero && !slug && (
           <div className="slider">
             <div className="slide"></div>
             <div className="slide"></div>
@@ -90,18 +78,17 @@ export const Main = ({ isHero }: Props) => {
   );
 };
 
-type DivProps = {
-  isHero: boolean;
-};
+// type MyInter = {
+//   isHero?: boolean;
+// };
 
-const Div = styled.main<DivProps>`
+const Div = styled.section`
   width: 100%;
 
   .container {
     height: clamp(100vh, 110%, 1500px);
     position: relative;
     width: 100%;
-    /* background : url(${() => process.env.PUBLIC_URL + "/images/"}); */
     overflow: hidden;
     padding-left: 1rem;
     padding-top: 15rem;
@@ -130,11 +117,17 @@ const Div = styled.main<DivProps>`
       width: 100%;
       z-index: 1;
       height: 100%;
-      background: url("/images/hero.png");
+      /* background: url("/images/hero.png"); */
+
+      ${(p) => `background: url(${p.imgSrc});`}
+      /* background : url(${() => process.env.PUBLIC_URL + "/images/"}); */
+
+      
+      /* background: url("/images/hero.png"); */
       filter: blur(2.5px);
       background-size: cover;
       background-repeat: no-repeat;
-      background-position: 40% 50%;
+      background-position: 30% 40%;
       object-fit: cover;
       top: 0;
       left: 0;
@@ -319,7 +312,6 @@ const Div = styled.main<DivProps>`
       !p.isHero
         ? css`
             width: clamp(300px, 90%, 1920px);
-            margin-top: 3rem;
             height: 440px;
             overflow: hidden;
             padding: 7rem 10rem;
