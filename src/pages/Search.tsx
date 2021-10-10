@@ -83,7 +83,7 @@ function Search({}: Props): ReactElement {
     <Div>
       <div className="container flex-center">
         <svg
-          onClick={() => history.push("/")}
+          onClick={() =>  history.push("/")}
           width="40"
           height="40"
           viewBox="0 0 40 40"
@@ -207,6 +207,8 @@ const Div = styled.section`
     }
 
     @media screen and (min-width: 1100px) {
+      padding-left:6.6rem;
+      
       .search {
         svg {
           top: calc(2.35rem - 8.5px);
