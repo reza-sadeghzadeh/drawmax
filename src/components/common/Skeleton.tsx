@@ -28,7 +28,7 @@ const Div = styled.div`
   width: 176px !important;
   /* overflow: hidden; */
   position: relative;
-  animation: blink-s 0.5s ease 0s infinite alternate;
+  /* animation: blink-s 0.5s ease 0s infinite alternate; */
   padding-bottom: 0.75rem;
 
   .img {
@@ -37,41 +37,75 @@ const Div = styled.div`
     height: 300px;
     top: 0;
     border-radius: 30px;
-    /* height: 284px; */
+    position: relative;
     object-fit: cover;
+    overflow: hidden;
+
+    ::after {
+      content: "";
+      position: absolute;
+      transform: rotate(30deg);
+      width: 30px;
+      top: -50%;
+      height: 300%;
+      /* background: linear-gradient(to right, #5f5f5f, #acacac, #5f5f5f); */
+      background-color: #868686;
+      z-index: 5;
+      animation: move 1.5s ease-in-out 0s infinite forwards;
+    }
   }
 
   .h5 {
     margin-top: 1.5rem;
     margin-left: 1rem;
-    background-color: #525252;
+    background-color: #5f5f5f;
     width: 100px;
     height: 10px;
     border-radius: 10px;
     margin-bottom: 1rem;
     z-index: 5;
-    font-family: my-font-bold;
-    font-size: 1.5rem;
     transition: 0.2s ease all;
+    overflow: hidden;
+    position: relative;
+
+    ::after {
+      content: "";
+      position: absolute;
+      transform: rotate(30deg);
+      width: 20px;
+      top: -30px;
+      left: -100px;
+      height: 50px;
+      background-color: #979797;
+      z-index: 5;
+      animation: move 1s ease-in-out 0s infinite forwards;
+    }
   }
 
   .bottom-title {
-    opacity: 0.5;
     margin-left: 1rem;
     transition: 0.2s ease all;
     width: 80%;
     justify-content: space-between;
 
-    .p {
-      background-color: #666666;
-      font-size: 1.4rem;
-      width: 30px;
-      border-radius: 30px;
-      height: 10px;
-    }
-
     .score {
       align-self: flex-end;
+      overflow: hidden;
+      position: relative;
+
+      ::after {
+        content: "";
+        position: absolute;
+        transform: rotate(30deg);
+        width: 20px;
+        top: -30px;
+        height: 50px;
+        background-color: #6b6b6b;
+        z-index: 5;
+        left: -20px;
+        animation: move 1.5s ease-in-out 0s infinite forwards;
+      }
+
       .img {
         opacity: 0.7;
         padding-right: 50px;
@@ -80,12 +114,6 @@ const Div = styled.div`
         width: 70%;
         object-fit: contain;
         margin-right: 0.2rem;
-      }
-      span {
-        width: 30px;
-        height: 10px;
-        border-radius: 30px;
-        background-color: #666666;
       }
     }
   }
@@ -106,12 +134,21 @@ const Div = styled.div`
     }
   }
 
-  @keyframes blink-s {
+  /* @keyframes blink-s {
     from {
       opacity: 0;
     }
     to {
       opacity: 1;
+    }
+  } */
+
+  @keyframes move {
+    from {
+      left: -100%;
+    }
+    to {
+      left: 160%;
     }
   }
 `;
