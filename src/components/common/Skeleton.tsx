@@ -12,9 +12,6 @@ export const Skeleton: React.FC<Props> = () => {
         <div className="p" />
         <div className="score flex-center">
           <div className="img score" />
-          <span />
-          <div className="img score" />
-          <span />
         </div>
       </div>
     </Div>
@@ -25,20 +22,22 @@ const Div = styled.div`
   margin: 3rem 1rem;
   padding: 0;
   flex-direction: column;
+  /* overflow: visible; */
   align-items: flex-start;
   justify-content: flex-start;
-  width: 176px;
-  overflow: hidden;
+  width: 176px !important;
+  /* overflow: hidden; */
   position: relative;
   animation: blink-s 0.5s ease 0s infinite alternate;
-  padding-bottom: 0.3rem;
+  padding-bottom: 0.75rem;
 
   .img {
     background-color: #5f5f5f;
-    width: 100%;
+    width: 176px !important;
+    height: 300px;
     top: 0;
     border-radius: 30px;
-    height: 284px;
+    /* height: 284px; */
     object-fit: cover;
   }
 
@@ -60,7 +59,7 @@ const Div = styled.div`
     opacity: 0.5;
     margin-left: 1rem;
     transition: 0.2s ease all;
-    width: 100%;
+    width: 80%;
     justify-content: space-between;
 
     .p {
@@ -74,8 +73,11 @@ const Div = styled.div`
     .score {
       align-self: flex-end;
       .img {
+        opacity: 0.7;
+        padding-right: 50px;
         width: 15px;
-        height: 15px;
+        height: 10px;
+        width: 70%;
         object-fit: contain;
         margin-right: 0.2rem;
       }
@@ -90,9 +92,12 @@ const Div = styled.div`
 
   @media screen and (min-width: 1100px) {
     margin: 3rem 2rem;
-    width: 219px;
+    width: 219px !important;
+    z-index: 56;
+    overflow: visible;
 
     .img {
+      width: 219px !important;
       height: 354px;
     }
 

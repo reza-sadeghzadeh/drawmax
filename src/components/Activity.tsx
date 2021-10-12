@@ -47,19 +47,19 @@ export default function Activity({}: Props): ReactElement {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
       duration: 99,
       year: 2021,
-      imgSrc: "/images/movie1.png",
+      imgSrc: "/images/220px-Blade_Runner_(1982_poster).png",
       score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 4,
       season: 2,
       episode: 6,
-      title: "Jungle Cruise",
+      title: "Joker",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
       duration: 99,
       year: 2021,
-      imgSrc: "/images/movie1.png",
+      imgSrc: "/images/220px-Joker_(2019_film)_poster.jpg",
       score: { imdb: 4.5, rt: 123 },
     },
     {
@@ -71,7 +71,7 @@ export default function Activity({}: Props): ReactElement {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
       duration: 99,
       year: 2021,
-      imgSrc: "/images/movie1.png",
+      imgSrc: "/images/220px-Blade_Runner_(1982_poster).png",
       score: { imdb: 4.5, rt: 123 },
     },
     {
@@ -90,12 +90,12 @@ export default function Activity({}: Props): ReactElement {
       id: 7,
       season: 2,
       episode: 6,
-      title: "Jungle Cruise",
+      title: "Joker",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
       duration: 99,
       year: 2021,
-      imgSrc: "/images/movie1.png",
+      imgSrc: "/images/220px-Joker_(2019_film)_poster.jpg",
       score: { imdb: 4.5, rt: 123 },
     },
     {
@@ -119,7 +119,7 @@ export default function Activity({}: Props): ReactElement {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
       duration: 99,
       year: 2021,
-      imgSrc: "/images/movie1.png",
+      imgSrc: "/images/220px-Blade_Runner_(1982_poster).png",
       score: { imdb: 4.5, rt: 123 },
     },
     {
@@ -131,19 +131,19 @@ export default function Activity({}: Props): ReactElement {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
       duration: 99,
       year: 2021,
-      imgSrc: "/images/movie1.png",
+      imgSrc: "/images/220px-Blade_Runner_(1982_poster).png",
       score: { imdb: 4.5, rt: 123 },
     },
     {
       id: 11,
       season: 2,
       episode: 6,
-      title: "Jungle Cruise",
+      title: "Joker",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
       duration: 99,
       year: 2021,
-      imgSrc: "/images/movie1.png",
+      imgSrc: "/images/220px-Joker_(2019_film)_poster.jpg",
       score: { imdb: 4.5, rt: 123 },
     },
     {
@@ -155,7 +155,7 @@ export default function Activity({}: Props): ReactElement {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
       duration: 99,
       year: 2021,
-      imgSrc: "/images/movie1.png",
+      imgSrc: "/images/220px-Blade_Runner_(1982_poster).png",
       score: { imdb: 4.5, rt: 123 },
     },
   ];

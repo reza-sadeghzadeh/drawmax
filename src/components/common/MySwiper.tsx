@@ -48,7 +48,7 @@ const MySwiper: React.FC<SwiperProp> = ({ forSeries, data, cast }) => {
           type: SHOW_SKELETON_FOR_LATEST_MOVIES,
           payload: { showSkeletonForLatestMovies: false },
         });
-    }, 2000);
+    }, 1000);
 
     btnHolder.current
       ?.querySelectorAll("button")

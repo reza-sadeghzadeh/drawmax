@@ -21,7 +21,7 @@ export default function Activity({ foot }: Props): ReactElement {
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
 
-      imgSrc: "/images/movie1.png",
+      imgSrc: "/images/220px-Joker_(2019_film)_poster.jpg",
       score: { imdb: 4.5, rt: 123 },
     },
     {
@@ -34,7 +34,7 @@ export default function Activity({ foot }: Props): ReactElement {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
 
       duration: 135,
-      imgSrc: "/images/movie1.png",
+      imgSrc: "/images/Interstellar_film_poster.jpg",
       score: { imdb: 4.5, rt: 123 },
     },
     {
@@ -60,7 +60,7 @@ export default function Activity({ foot }: Props): ReactElement {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
 
       duration: 135,
-      imgSrc: "/images/movie1.png",
+      imgSrc: "/images/220px-Blade_Runner_(1982_poster).png",
       score: { imdb: 4.5, rt: 123 },
     },
     {
@@ -73,7 +73,7 @@ export default function Activity({ foot }: Props): ReactElement {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
 
       duration: 135,
-      imgSrc: "/images/movie1.png",
+      imgSrc: "/images/220px-Joker_(2019_film)_poster.jpg",
       score: { imdb: 4.5, rt: 123 },
     },
     {
@@ -86,7 +86,21 @@ export default function Activity({ foot }: Props): ReactElement {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
 
       duration: 135,
-      imgSrc: "/images/movie1.png",
+      imgSrc: "/images/220px-Blade_Runner_(1982_poster).png",
+      score: { imdb: 4.5, rt: 123 },
+    },
+
+    {
+      id: 8,
+      title: "Jungle Cruise",
+      season: 4,
+      episode: 6,
+      year: 2021,
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
+
+      duration: 135,
+      imgSrc: "/images/220px-Blade_Runner_(1982_poster).png",
       score: { imdb: 4.5, rt: 123 },
     },
     {
@@ -99,20 +113,7 @@ export default function Activity({ foot }: Props): ReactElement {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
 
       duration: 135,
-      imgSrc: "/images/movie1.png",
-      score: { imdb: 4.5, rt: 123 },
-    },
-    {
-      id: 8,
-      title: "Jungle Cruise",
-      season: 4,
-      episode: 6,
-      year: 2021,
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
-
-      duration: 135,
-      imgSrc: "/images/movie1.png",
+      imgSrc: "/images/Interstellar_film_poster.jpg",
       score: { imdb: 4.5, rt: 123 },
     },
     {
@@ -125,7 +126,7 @@ export default function Activity({ foot }: Props): ReactElement {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
 
       duration: 135,
-      imgSrc: "/images/movie1.png",
+      imgSrc: "/images/220px-Joker_(2019_film)_poster.jpg",
       score: { imdb: 4.5, rt: 123 },
     },
     {
@@ -169,9 +170,7 @@ export default function Activity({ foot }: Props): ReactElement {
           <ul className="flex-center">
             {!skeleton &&
               data.map((d) => <li key={d.id}>{<Card movie={d} />}</li>)}
-            {/* {data.map((d) => (
-              <li key={d.id}>{<Card movie={d} />}</li>
-            ))} */}
+
             {skeleton && data.map((d) => <li key={d.id}>{<Skeleton />}</li>)}
           </ul>
         </div>

@@ -23,9 +23,9 @@ export const Card: React.FC<Props> = ({ movie }) => {
   return (
     <Div onClick={() => history.push(`/movie/${movie.id}`)}>
       <LazyLoad height={300} offset={100} once>
-        <img src="images/movie1.png" alt="movie image" />
+        <img src={movie.imgSrc} alt="movie image" />
       </LazyLoad>
-      <h5>Jungle Cruise</h5>
+      <h5>{movie.title}</h5>
       <div className="bottom-title flex-center">
         <p>2021</p>
         <div className="score flex-center">
