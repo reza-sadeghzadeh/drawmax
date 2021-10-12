@@ -1,0 +1,5 @@
+The source folder
+
+All the components all the logic for React and under the stuff is in this folder.
+
+Pages. Components, store for Redux and global styles can be found here

@@ -13,15 +13,24 @@ export const Header = () => {
         <div className="menu">
           <RiSearchLine color="white" onClick={() => history.push("/search")} />
           <div className="content flex-center">
-            <NavLink exact activeClassName="active" to="/">
-              Home
-            </NavLink>
-            <NavLink exact activeClassName="active" to="/categories">
-              Categories
-            </NavLink>
-            <NavLink exact activeClassName="active" to="/discover">
-              Discover
-            </NavLink>
+            <ul className="flex-center">
+              <li>
+                <NavLink exact activeClassName="active" to="/">
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink exact activeClassName="active" to="/categories">
+                  Categories
+                </NavLink>
+              </li>
+              <li>
+                <NavLink exact activeClassName="active" to="/discover">
+                  Discover
+                </NavLink>
+              </li>
+            </ul>
+
             <button id="nav-button">Sign In</button>
           </div>
         </div>
@@ -70,6 +79,25 @@ const Nav = styled.nav`
 
       .content {
         display: none;
+
+        li {
+          position: relative;
+
+          ::after {
+            background-color: #f50505;
+            width: 0;
+            height: 1px;
+            transition: 0.2s ease all;
+            bottom: -5px;
+            position: absolute;
+            left: 0;
+            content: "";
+          }
+
+          :hover::after {
+            width: 60%;
+          }
+        }
       }
 
       svg {

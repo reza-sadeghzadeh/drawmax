@@ -1,0 +1,8 @@
+find the components here!
+
+In this folder, you can find all the components that I've used across the website
+This is going to be the root folder for components. Be aware that these components are styled,
+it means that every single component contains its Style.
+
+In the future, if you want to you use these components again it's going to be
+really easy for you to achive that.

@@ -1,4 +1,4 @@
-import { GET_DATA } from "../actions/getData";
+import * as actions from "../actions/getData";
 
 const initialState: {} = {};
 
@@ -12,7 +12,16 @@ export const getDataReducer: (state: object, {}: myInter) => void = (
   { type, payload }
 ) => {
   switch (type) {
-    case GET_DATA:
+    case actions.GET_HOME_HERO_MOVIES:
+      return { ...state, ...payload };
+
+    case actions.GET_LATEST_MOVIES:
+      return { ...state, ...payload };
+
+    case actions.GET_LATEST_SERIES:
+      return { ...state, ...payload };
+
+    case actions.GET_RELATED_MOVIES:
       return { ...state, ...payload };
 
     default:

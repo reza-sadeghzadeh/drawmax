@@ -1,12 +1,25 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { LogoAndDesc } from "../components/common/LogoAndDesc";
+import { IS_LOADING } from "../store/actions/isLoading";
+import { RootState } from "../store/reducers";
 
 interface Props {}
 
 export const Loading = (props: Props) => {
+  const dispatch = useDispatch();
+  const { isLoading } = useSelector((state: RootState) => state.isLoading);
+
   return (
     <Div className="flex-center">
+      <button
+        onClick={() =>
+          dispatch({ type: IS_LOADING, payload: { isLoading: false } })
+        }
+      >
+        close laoding
+      </button>
       <LogoAndDesc />
       <div className="spinner">
         <h4>Loading...</h4>
@@ -16,6 +29,13 @@ export const Loading = (props: Props) => {
 };
 
 const Div = styled.section`
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #1b1b1b;
+
   @media screen and (max-height: 500px) {
     justify-content: space-between;
 

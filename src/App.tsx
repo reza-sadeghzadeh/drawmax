@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { RootStateOrAny, useSelector } from "react-redux";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import "./App.css";
 import Footer from "./components/common/Footer";
 import { Header } from "./components/common/Header";
 import NotFound from "./pages/404";
@@ -10,30 +10,29 @@ import { Loading } from "./pages/Loading";
 import Search from "./pages/Search";
 
 function App() {
-  const [loading, setLoading] = useState(false);
-
-  // useEffect(() => {
-  //   setLoading(true);
-  // }, []);
-
-  if (loading) return <Loading />;
+  const { isLoading } = useSelector((state: RootStateOrAny) => state.isLoading);
 
   return (
     <>
+      {isLoading && <Loading />}
       <BrowserRouter>
-        <Header />
-        <Switch>
-          <Route exact path="/">
-            <Home setLoading={setLoading} />
-          </Route>
-          <Route exact path="/search" component={Search} />
-          <Route exact path="/movie/:id">
-            <DownloadSlug />
-          </Route>
-          <Route path="/not-found" component={NotFound} />
-          <Redirect to="/not-found" />
-        </Switch>
-        <Footer />
+        {!isLoading && (
+          <>
+            <Header />
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route exact path="/search" component={Search} />
+              <Route exact path="/movie/:id">
+                <DownloadSlug />
+              </Route>
+              <Route path="/not-found" component={NotFound} />
+              <Redirect to="/not-found" />
+            </Switch>
+            <Footer />
+          </>
+        )}
       </BrowserRouter>
     </>
   );

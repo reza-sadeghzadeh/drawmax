@@ -1,0 +1,2 @@
+all the common components that i've used is here,
+like card (for showing the each individual movie)
