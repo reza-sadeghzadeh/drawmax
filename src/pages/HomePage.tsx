@@ -1,10 +1,10 @@
-import React, { ReactElement, useEffect } from "react";
-import Activity from "../components/Activity";
-import { Main } from "../components/Main.js";
-import Latest from "../components/Latest";
+import React, { ReactElement } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { IS_LOADING } from "../store/actions/isLoading";
 import styled from "styled-components";
+import Activity from "../components/Activity";
+import Latest from "../components/Latest";
+import { Main } from "../components/Main";
+import { IS_LOADING } from "../store/actions/isLoading";
 
 interface Props {}
 
@@ -38,6 +38,7 @@ function HomePage({}: Props): ReactElement {
       >
         Clickiy Click
       </button>
+
       <Activity />
       <Latest foot={false} />
       <Main movie={movie} isHero={false} slug={false} />

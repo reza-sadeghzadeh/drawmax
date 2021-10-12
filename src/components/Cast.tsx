@@ -25,7 +25,7 @@ function Cast({}: Props): ReactElement {
       <div className="container">
         <h4>Cast</h4>
 
-        <MySwiper cast={true} data={cast} />
+        <MySwiper forSeries={false} cast={true} data={cast} />
       </div>
     </Div>
   );

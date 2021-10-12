@@ -1,7 +1,10 @@
 import React, { ReactElement } from "react";
-import styled, { css } from "styled-components";
+import { useSelector } from "react-redux";
+import styled from "styled-components";
+import { RootState } from "../store/reducers";
 import { Card } from "./common/Card";
 import MySwiper from "./common/MySwiper";
+import { Skeleton } from "./common/Skeleton";
 
 interface Props {
   foot: boolean;
@@ -142,6 +145,10 @@ export default function Activity({ foot }: Props): ReactElement {
 
   const genres = ["Animations", "Action", "Horror", "Biography", "Drama"];
 
+  const skeleton = useSelector(
+    (state: RootState) => state.skeleton.showSkeletonForLatestSeries
+  );
+
   return (
     <Inherit className="flex-center">
       <div className="container flex-center">
@@ -153,16 +160,19 @@ export default function Activity({ foot }: Props): ReactElement {
               <h4> Latest Series </h4>
             </div>
             <div className="btn-slide-container">
-              <MySwiper data={genres} cast={false} />
+              <MySwiper forSeries={true} data={genres} cast={false} />
             </div>
             <div className="divider" />
           </>
         )}
         <div className="card-holder flex-center">
           <ul className="flex-center">
-            {data.map((d) => (
+            {!skeleton &&
+              data.map((d) => <li key={d.id}>{<Card movie={d} />}</li>)}
+            {/* {data.map((d) => (
               <li key={d.id}>{<Card movie={d} />}</li>
-            ))}
+            ))} */}
+            {skeleton && data.map((d) => <li key={d.id}>{<Skeleton />}</li>)}
           </ul>
         </div>
       </div>

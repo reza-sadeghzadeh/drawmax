@@ -1,15 +1,22 @@
 import React, { useEffect, useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
+import {
+  SHOW_SKELETON_FOR_LATEST_MOVIES,
+  SHOW_SKELETON_FOR_LATEST_SERIES,
+} from "../../store/actions/showSckeleton";
 
 interface SwiperProp {
   data: any[];
   cast: boolean;
+  forSeries: boolean;
 }
 
-const MySwiper: React.FC<SwiperProp> = ({ data, cast }) => {
+const MySwiper: React.FC<SwiperProp> = ({ forSeries, data, cast }) => {
   const btnHolder = useRef<HTMLDivElement>(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!cast)
@@ -18,6 +25,30 @@ const MySwiper: React.FC<SwiperProp> = ({ data, cast }) => {
 
   const handlebuttonActivation = (e: any) => {
     // logic like fetching and... here.
+
+    if (forSeries)
+      dispatch({
+        type: SHOW_SKELETON_FOR_LATEST_SERIES,
+        payload: { showSkeletonForLatestSeries: true },
+      });
+    else
+      dispatch({
+        type: SHOW_SKELETON_FOR_LATEST_MOVIES,
+        payload: { showSkeletonForLatestMovies: true },
+      });
+
+    setTimeout(() => {
+      if (forSeries)
+        dispatch({
+          type: SHOW_SKELETON_FOR_LATEST_SERIES,
+          payload: { showSkeletonForLatestSeries: false },
+        });
+      else
+        dispatch({
+          type: SHOW_SKELETON_FOR_LATEST_MOVIES,
+          payload: { showSkeletonForLatestMovies: false },
+        });
+    }, 2000);
 
     btnHolder.current
       ?.querySelectorAll("button")

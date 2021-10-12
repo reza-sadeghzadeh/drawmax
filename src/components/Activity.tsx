@@ -1,9 +1,13 @@
 /* eslint-disable no-restricted-globals */
 import React, { ReactElement } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { RootState } from "../store/reducers";
 import { Card } from "./common/Card";
 import MySwiper from "./common/MySwiper";
+//@ts-ignore
+import { Skeleton } from "./common/Skeleton";
 import { Inherit } from "./Latest";
 
 interface Props {}
@@ -155,6 +159,11 @@ export default function Activity({}: Props): ReactElement {
       score: { imdb: 4.5, rt: 123 },
     },
   ];
+  // showSkeletonForLatestSeries: false,
+
+  const skeleton = useSelector(
+    (state: RootState) => state.skeleton.showSkeletonForLatestMovies
+  );
 
   const genres = ["Animations", "Action", "Horror", "Biography", "Drama"];
 
@@ -166,15 +175,22 @@ export default function Activity({}: Props): ReactElement {
           <img src="/icons/Activity.svg" />
           <h4> Latest Movies</h4>
         </div>
-        <MySwiper data={genres} cast={false} />
+        <MySwiper forSeries={false} data={genres} cast={false} />
         <div className="divider" />
         <div className="card-holder flex-center">
           <ul className="flex-center">
-            {data.map((d) => (
-              <li key={d.id}>
-                <Card movie={d} />
-              </li>
-            ))}
+            {!skeleton &&
+              data.map((d) => (
+                <li key={d.id}>
+                  <Card movie={d} />
+                </li>
+              ))}
+            {skeleton &&
+              data.map((d) => (
+                <li key={d.id}>
+                  <Skeleton />
+                </li>
+              ))}
           </ul>
         </div>
         <div className="desktop-swipe">
@@ -204,14 +220,24 @@ export default function Activity({}: Props): ReactElement {
             spaceBetween={50}
             slidesPerView={4.3}
           >
-            {data.map((d) => (
-              <SwiperSlide
-                key={d.id}
-                className="swiper-slide my-siwper flex-center"
-              >
-                <Card movie={d} />
-              </SwiperSlide>
-            ))}
+            {!skeleton &&
+              data.map((d) => (
+                <SwiperSlide
+                  key={d.id}
+                  className="swiper-slide my-siwper flex-center"
+                >
+                  <Card movie={d} />
+                </SwiperSlide>
+              ))}
+            {skeleton &&
+              data.map((d) => (
+                <SwiperSlide
+                  key={d.id}
+                  className="swiper-slide my-siwper flex-center"
+                >
+                  <Skeleton />
+                </SwiperSlide>
+              ))}
           </Swiper>
         </div>
       </div>

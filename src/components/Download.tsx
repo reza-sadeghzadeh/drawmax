@@ -26,7 +26,7 @@ export default function Download({}: Props): ReactElement {
         <DownloadsCommon data={data.movieQuality} />
         <div className="sub-buttons flex-center">
           <h4>Download subtitle</h4>
-          <MySwiper data={data.sub.lanqs} cast={false} />
+          <MySwiper forSeries={false} data={data.sub.lanqs} cast={false} />
         </div>
         <DownloadsCommon data={data.movieQuality} />
       </div>

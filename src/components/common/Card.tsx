@@ -1,7 +1,7 @@
 import React from "react";
-import styled from "styled-components";
 import LazyLoad from "react-lazyload";
-import { useLocation, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import styled from "styled-components";
 
 interface Props {
   movie: {

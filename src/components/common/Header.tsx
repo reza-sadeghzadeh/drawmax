@@ -1,7 +1,7 @@
 import React from "react";
-import styled from "styled-components";
-import { NavLink, useHistory } from "react-router-dom";
 import { RiSearchLine } from "react-icons/ri";
+import { NavLink, useHistory } from "react-router-dom";
+import styled from "styled-components";
 
 export const Header = () => {
   const history = useHistory();
@@ -60,7 +60,6 @@ const Nav = styled.nav`
 
   .container {
     height: 98px;
-    /* transform: translateY(5%); */
     width: 100%;
     position: relative;
     z-index: 5;

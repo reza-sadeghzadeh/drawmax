@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, compose } from "redux";
+import { applyMiddleware, compose, createStore } from "redux";
 import thunk from "redux-thunk";
 import reducers from "./reducers";
 
@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === "development") {
   );
   store = createStore(reducers, enhancer);
 } else {
-  store = createStore(reducers);
+  store = createStore(reducers, applyMiddleware(thunk));
 }
 
 export default store;
