@@ -22,14 +22,11 @@ const Div = styled.div`
   margin: 3rem 1rem;
   padding: 0;
   flex-direction: column;
-  /* overflow: visible; */
   align-items: flex-start;
   justify-content: flex-start;
   width: 176px !important;
-  /* overflow: hidden; */
   position: relative;
-  /* animation: blink-s 0.5s ease 0s infinite alternate; */
-  padding-bottom: 0.75rem;
+  padding-bottom: 1.77rem;
 
   .img {
     background-color: #5f5f5f;
@@ -48,7 +45,6 @@ const Div = styled.div`
       width: 30px;
       top: -50%;
       height: 300%;
-      /* background: linear-gradient(to right, #5f5f5f, #acacac, #5f5f5f); */
       background-color: #868686;
       z-index: 5;
       animation: move 1.5s ease-in-out 0s infinite forwards;
@@ -133,15 +129,6 @@ const Div = styled.div`
       font-size: 1.8rem;
     }
   }
-
-  /* @keyframes blink-s {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  } */
 
   @keyframes move {
     from {

@@ -2,9 +2,9 @@ import React, { ReactElement } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import Activity from "../components/Activity";
+import LandingPageHero from "../components/LandingPageHero";
 import Latest from "../components/Latest";
 import { Main } from "../components/Main";
-import { IS_LOADING } from "../store/actions/isLoading";
 
 interface Props {}
 
@@ -19,25 +19,23 @@ function HomePage({}: Props): ReactElement {
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
     duration: 135,
     imgSrc: "/images/hero.png",
-    // imgSrc: "/images/movie1.png",
     score: { imdb: 4.5, rt: 123 },
   };
   //@ts-ignore
   const isLoading = useSelector((state) => state.isLoading);
 
-  console.log(isLoading);
   const dispatch = useDispatch();
 
   return (
     <Div>
-      <Main movie={movie} isHero={true} slug={false} />
-      <button
+      <LandingPageHero />
+      {/* <button
         onClick={() =>
           dispatch({ type: IS_LOADING, payload: { isLoading: true } })
         }
       >
         Clickiy Click
-      </button>
+      </button> */}
 
       <Activity />
       <Latest foot={false} />

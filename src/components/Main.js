@@ -1,9 +1,8 @@
 import React from "react";
-import styled, { css } from "styled-components";
-import { BsFillClockFill } from "react-icons/bs";
-import { GoPlay } from "react-icons/go";
-import { BsFillPlusSquareFill } from "react-icons/bs";
+import { BsFillClockFill, BsFillPlusSquareFill } from "react-icons/bs";
 import { CgScrollV } from "react-icons/cg";
+import { GoPlay } from "react-icons/go";
+import styled, { css } from "styled-components";
 
 export const Main = ({ movie, isHero, slug }) => {
   return (
@@ -65,14 +64,14 @@ export const Main = ({ movie, isHero, slug }) => {
             <h2>scroll down!</h2>
           </div>
         )}
-        {isHero && !slug && (
+        {/* {isHero && !slug && (
           <div className="slider">
             <div className="slide"></div>
             <div className="slide"></div>
             <div className="slide active"></div>
             <div className="slide"></div>
           </div>
-        )}
+        )} */}
       </div>
     </Div>
   );
@@ -87,6 +86,7 @@ const Div = styled.section`
 
   .container {
     height: clamp(100vh, 110%, 1500px);
+    /* min-height: 100vh; */
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -117,17 +117,16 @@ const Div = styled.section`
       width: 100%;
       z-index: 1;
       height: 100%;
-      /* background: url("/images/hero.png"); */
 
       ${(p) => `background: url(${p.imgSrc});`}
       /* background : url(${() => process.env.PUBLIC_URL + "/images/"}); */
 
       
-      /* background: url("/images/hero.png"); */
-      filter: blur(2.5px);
+    
+      filter: blur(1.5px);
       background-size: cover;
       background-repeat: no-repeat;
-      background-position: 30% 40%;
+      background-position: 30% 0%;
       object-fit: cover;
       top: 0;
       left: 0;
@@ -287,7 +286,7 @@ const Div = styled.section`
         max-width: 500px;
       }
 
-      .slider {
+      /* .slider {
         position: absolute;
         right: 100px;
         bottom: 50px;
@@ -306,7 +305,7 @@ const Div = styled.section`
             background-color: #c4c4c4;
           }
         }
-      }
+      } */
     }
     ${(p) =>
       !p.isHero

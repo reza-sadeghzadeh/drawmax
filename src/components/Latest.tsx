@@ -186,6 +186,7 @@ export const Inherit = styled.section`
     padding-bottom: 5rem;
     flex-direction: column;
     align-items: flex-start;
+    width: 100%;
 
     &__header {
       margin-bottom: 3.5rem;
@@ -222,7 +223,7 @@ export const Inherit = styled.section`
       .btn-slide-container {
         width: 100%;
         display: flex;
-        justify-content: center;
+        /* justify-content: center; */
       }
 
       &__header {

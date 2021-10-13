@@ -1,5 +1,4 @@
 import React, { ReactElement, useEffect } from "react";
-import { useParams } from "react-router";
 import Cast from "../components/Cast";
 import Download from "../components/Download";
 import { Main } from "../components/Main.js";
@@ -22,7 +21,7 @@ function DownloadSlug({ movie }: Props): ReactElement {
   //Query DB with the id
   //Or use state if user clicks on the card. In this case no need to call the DB
 
-  const params = useParams();
+  // const params = useParams();
 
   let data;
 

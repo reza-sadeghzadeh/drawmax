@@ -18,13 +18,13 @@ export default function Activity({}: Props): ReactElement {
       id: 1,
       season: 2,
       episode: 6,
-      title: "Jungle Cruise",
+      title: "Interstaller",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati accusantium bcaecati accusantium accusamus odio molestiae porro dolorem beatae sapiente, commodi, non totam illo ipsum dolor nostrum sit quos aperiam voluptate  ",
-      year: 2021,
+      year: 2014,
       duration: 99,
-      imgSrc: "/images/movie1.png",
-      score: { imdb: 4.5, rt: 123 },
+      imgSrc: "/images/Interstellar_film_poster.jpg",
+      score: { imdb: 8.4, rt: 123 },
     },
     {
       id: 2,

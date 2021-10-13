@@ -10,13 +10,9 @@ import { Loading } from "./pages/Loading";
 import Search from "./pages/Search";
 
 function App() {
-  console.log(process.env.PUBLIC_URL);
-
   const { isLoading } = useSelector((state: RootStateOrAny) => state.isLoading);
 
   const dispatch = useDispatch();
-
-  dispatch(() => console.log("thunk"));
 
   return (
     <>

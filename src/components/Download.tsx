@@ -10,7 +10,7 @@ export default function Download({}: Props): ReactElement {
   const data = {
     movieQuality: ["480", "720", "1080"],
     sub: {
-      lanqs: ["English", "English", "French"],
+      lanqs: ["English", "Arabic", "French"],
       qualities: ["720", "1080"],
     },
   };
@@ -55,7 +55,7 @@ const Div = styled.section`
     .sub-buttons {
       width: 100%;
       flex-direction: column;
-      align-items: flex-end;
+      align-items: flex-start;
 
       h4 {
         align-self: flex-start;
@@ -110,17 +110,19 @@ function Subs({ text }: { text: string }): ReactElement {
   return (
     <Small className="flex-center">
       <img src="/icons/vector.svg" alt="web icon" />
-      <h4>{text}</h4>
+      <h5>{text}</h5>
     </Small>
   );
 }
 
 const Small = styled.div`
   img {
-    margin-right: 2.5rem;
+    margin-right: 1rem;
   }
 
-  h4 {
+  h5 {
+    margin: 0;
+    padding: 0;
     font-size: 1.4rem;
     font-family: my-font-bold;
   }

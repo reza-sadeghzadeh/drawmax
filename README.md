@@ -1,6 +1,6 @@
 # Drawmax Project - Movie website
 
-This project was bootstrapped with [Create React App] and developed by myself(https://github.com/reza-sadeghzadeh)
+This project was bootstrapped with [Create React App] and developed by myself (https://github.com/reza-sadeghzadeh)
 
 ## Available Scripts
 
@@ -14,7 +14,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.\
-Currently there are test availible for redux logic only.\
+Currently there are test availible for redux logic only.
 
 ### `yarn build`
 

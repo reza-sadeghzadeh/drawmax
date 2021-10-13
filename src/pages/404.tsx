@@ -1,6 +1,5 @@
 import React, { ReactElement } from "react";
 import styled from "styled-components";
-import { LogoAndDesc } from "../components/common/LogoAndDesc";
 
 interface Props {}
 

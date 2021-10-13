@@ -68,11 +68,6 @@ const MySwiper: React.FC<SwiperProp> = ({ forSeries, data, cast }) => {
             width: 300,
             slidesPerView: 2,
           },
-          //   900: {
-          //     width: 900,
-          //     slidesPerView: 6,
-          //     spaceBetween: 160,
-          //   },
         }}
         className="flex-center"
         spaceBetween={90}
@@ -81,7 +76,7 @@ const MySwiper: React.FC<SwiperProp> = ({ forSeries, data, cast }) => {
         {!cast &&
           data.map((g) => (
             <SwiperSlide className="swiper-slide my-siwper flex-center">
-              <div className="btn-holder flex-center">
+              <div key={g.id} className="btn-holder flex-center">
                 <button onClick={(e) => handlebuttonActivation(e)}>{g}</button>
               </div>
             </SwiperSlide>
@@ -90,7 +85,7 @@ const MySwiper: React.FC<SwiperProp> = ({ forSeries, data, cast }) => {
           data.map((g) => (
             <SwiperSlide className="swiper-slide my-cast-siwper flex-center">
               <div className="cast-holder flex-center">
-                <li></li>
+                <li key={g.id}></li>
               </div>
             </SwiperSlide>
           ))}

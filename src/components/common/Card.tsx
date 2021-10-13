@@ -52,7 +52,7 @@ const Div = styled.div`
   }
 
   h5 {
-    margin-top: 1.5 rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
     font-family: my-font-bold;
     font-size: 1.5rem;

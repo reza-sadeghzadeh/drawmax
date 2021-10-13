@@ -43,7 +43,7 @@ const Div = styled.footer`
       width: 50px;
       height: 50px;
       position: absolute;
-      right: 7vh;
+      right: 10vh;
       top: -25px;
     }
 
