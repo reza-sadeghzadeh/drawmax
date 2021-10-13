@@ -43,6 +43,7 @@ const Div = styled.section`
     margin-top: 10px;
 
     .head {
+      z-index: 20;
       align-self: center;
       transform: translateY(-53px) translateX(-2rem);
       height: 86px;
@@ -53,6 +54,7 @@ const Div = styled.section`
     }
 
     .sub-buttons {
+      overflow-x: hidden;
       width: 100%;
       flex-direction: column;
       align-items: flex-start;

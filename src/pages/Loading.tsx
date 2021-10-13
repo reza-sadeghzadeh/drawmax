@@ -2,7 +2,6 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { LogoAndDesc } from "../components/common/LogoAndDesc";
-import { IS_LOADING } from "../store/actions/isLoading";
 import { RootState } from "../store/reducers";
 
 interface Props {}
@@ -13,13 +12,6 @@ export const Loading = (props: Props) => {
 
   return (
     <Div className="flex-center">
-      <button
-        onClick={() =>
-          dispatch({ type: IS_LOADING, payload: { isLoading: false } })
-        }
-      >
-        close laoding
-      </button>
       <LogoAndDesc />
       <div className="spinner">
         <h4>Loading...</h4>

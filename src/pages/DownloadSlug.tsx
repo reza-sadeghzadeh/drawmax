@@ -1,4 +1,5 @@
 import React, { ReactElement, useEffect } from "react";
+import styled from "styled-components";
 import Cast from "../components/Cast";
 import Download from "../components/Download";
 import { Main } from "../components/Main.js";
@@ -45,14 +46,28 @@ function DownloadSlug({ movie }: Props): ReactElement {
   }
 
   return (
-    <div>
-      <>
-        <Main movie={data} isHero={true} slug={true} />
-        <Cast />
-        <Download />
-      </>
-    </div>
+    <Div>
+      <Main movie={data} isHero={true} slug={true} />
+      <Cast />
+      <Download />
+    </Div>
   );
 }
 
 export default DownloadSlug;
+
+const Div = styled.main`
+  width: 100%;
+
+  @media screen and (min-width: 1920px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+
+    .container {
+      width: 1920px;
+    }
+  }
+`;

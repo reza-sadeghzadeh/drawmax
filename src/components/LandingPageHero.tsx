@@ -80,9 +80,32 @@ function LandingPageHero({}: Props): ReactElement {
       clearTimeout(interv);
     };
   }, [movieState]);
+  //@ts-ignore
+
+  useEffect(() => {
+    //@ts-ignore
+    window.addEventListener("keydown", (e: any) => {
+      switch (e.key) {
+        case "ArrowRight":
+          setMovieState((movieState) =>
+            movieState === 3 ? 0 : movieState + 1
+          );
+          break;
+
+        case "ArrowLeft":
+          setMovieState((movieState) =>
+            movieState === 0 ? 3 : movieState - 1
+          );
+          break;
+
+        default:
+          break;
+      }
+    });
+  }, []);
 
   return (
-    <Div>
+    <Div className="flex-center">
       <div className="container ">
         <Main movie={movies[movieState]} isHero={true} slug={false} />
         <div className="slider flex-center" ref={sliderRed}>
@@ -100,6 +123,9 @@ export default LandingPageHero;
 
 const Div = styled.div`
   .container {
+    position: relative;
+    width: 100%;
+
     .slider {
       background-color: #1414145c;
       padding: 2rem 2rem;
@@ -114,7 +140,7 @@ const Div = styled.div`
         width: 54px;
         cursor: pointer;
         box-sizing: border-box;
-        height: clamp(2px, 5px, 5px) !important;
+        height: clamp(2px, 3px, 5px);
         border-radius: 30px;
         margin: 0rem 5px;
         background-color: #747474;
@@ -133,6 +159,9 @@ const Div = styled.div`
         bottom: 50px;
         position: absolute;
       }
+    }
+    @media screen and (min-width: 1920px) {
+      width: 1920px;
     }
   }
 `;

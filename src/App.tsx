@@ -6,6 +6,7 @@ import { Header } from "./components/common/Header";
 import NotFound from "./pages/404";
 import DownloadSlug from "./pages/DownloadSlug";
 import Home from "./pages/HomePage";
+import LatestMoviesAndSeries from "./pages/LatestMoviesAndSeries";
 import { Loading } from "./pages/Loading";
 import Search from "./pages/Search";
 
@@ -29,6 +30,8 @@ function App() {
               <Route exact path="/movie/:id">
                 <DownloadSlug />
               </Route>
+              <Route path="/latest-series" component={LatestMoviesAndSeries} />
+              <Route path="/latest-movies" component={LatestMoviesAndSeries} />
               <Route path="/not-found" component={NotFound} />
               <Redirect to="/not-found" />
             </Switch>
