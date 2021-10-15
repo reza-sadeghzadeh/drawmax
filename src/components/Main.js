@@ -14,34 +14,31 @@ export const Main = ({ movie, isHero, slug }) => {
     >
       <div className="container flex-center ">
         <div className="container__movie-details flex-center ">
-          <div className="topside-details flex-center">
-            {isHero && (
-              <>
-                <BsFillClockFill />
-                <h4>
-                  Duration: {(movie.duration / 60).toFixed(0)}hr{" "}
-                  {movie.duration % 60} min
-                </h4>
-              </>
-            )}
-          </div>
-          <div className="topside-details flex-center">
-            <img src="/icons/Rotten Tomatoes Icon.svg" alt="Rotten Tomatoes" />
-            <span>{movie.score.rt}</span>
-            <img id="imdb" src="/icons/IMDB.svg" alt="IMDB" />
-            <span>{movie.score.imdb}</span>
+          <div className="top-side-detail-holder">
+            <div className="topside-details flex-center">
+              <BsFillClockFill />
+              <h4>
+                Duration: {(movie.duration / 60).toFixed(0)}hr{" "}
+                {movie.duration % 60} min
+              </h4>
+            </div>
+            <div className="topside-details flex-center">
+              <img
+                src="/icons/Rotten Tomatoes Icon.svg"
+                alt="Rotten Tomatoes"
+              />
+              <span>{movie.score.rt}</span>
+              <img id="imdb" src="/icons/IMDB.svg" alt="IMDB" />
+              <span>{movie.score.imdb}</span>
 
-            {isHero && (
-              <>
-                <div className="divider"></div>
-                <h4>
-                  Season: <span id="detail"> {movie.season}</span>
-                </h4>
-                <h4>
-                  Session: <span id="detail"> {movie.episode}</span>
-                </h4>
-              </>
-            )}
+              <div className="divider"></div>
+              <h4>
+                Season: <span id="detail"> {movie.season}</span>
+              </h4>
+              <h4>
+                Session: <span id="detail"> {movie.episode}</span>
+              </h4>
+            </div>
           </div>
           <h2 className="container__title">{movie.title}</h2>
           {isHero && (
@@ -64,14 +61,6 @@ export const Main = ({ movie, isHero, slug }) => {
             <h2>scroll down!</h2>
           </div>
         )}
-        {/* {isHero && !slug && (
-          <div className="slider">
-            <div className="slide"></div>
-            <div className="slide"></div>
-            <div className="slide active"></div>
-            <div className="slide"></div>
-          </div>
-        )} */}
       </div>
     </Div>
   );
@@ -135,7 +124,6 @@ const Div = styled.section`
       flex-direction: column;
       align-items: flex-start;
       justify-content: flex-start;
-      /* margin-top: 5rem; */
 
       .topside-details {
         justify-content: flex-start;
@@ -217,6 +205,7 @@ const Div = styled.section`
       h2 {
         transform: translateX(-50%);
       }
+
       svg {
         transform: translateX(-50%);
         width: 30px;
@@ -280,51 +269,46 @@ const Div = styled.section`
         font-size: 1.4rem;
         max-width: 500px;
       }
-
-      /* .slider {
-        position: absolute;
-        right: 100px;
-        bottom: 50px;
-        display: flex;
-        z-index: 3;
-
-        .slide {
-          width: 54px;
-          height: 3px;
-          border-radius: 30px;
-          margin: 0 5px;
-          background-color: #555555;
-          position: relative;
-
-          &.active {
-            background-color: #c4c4c4;
-          }
-        }
-      } */
     }
+
     ${(p) =>
       !p.isHero
         ? css`
-            @media screen and (min-width: 500px) {
-              width: clamp(300px, 90%, 1920px);
-              height: 440px;
-              overflow: hidden;
-              padding: 7rem 10rem;
-              border-radius: 50px;
+            .top-side-detail-holder {
+              transform: translateY(7rem);
+            }
 
-              ::after,
-              ::before {
-                height: 440px;
-                border-radius: 50px;
-              }
+            h2.container__title {
+              transform: translateY(-8rem);
+              font-size: 3rem;
+            }
+            border-radius: 50px;
+            height: 500px;
+
+            ::after,
+            ::before {
+              height: 500px;
+              border-radius: 50px;
+            }
+
+            @media screen and (min-width: 500px) {
+              flex-direction: column;
+
+              width: clamp(300px, 100%, 1920px);
+              height: 500px;
+              overflow: hidden;
             }
 
             @media screen and (min-width: 800px) {
               width: clamp(300px, 90%, 1920px);
               height: 440px;
-
+              border-radius: 50px;
               padding: 0 5rem;
               padding-top: 9rem;
+
+              .top-side-detail-holder {
+                transform: translateY(7rem);
+              }
             }
 
             @media screen and (min-width: 1000px) {
@@ -333,6 +317,15 @@ const Div = styled.section`
               justify-content: flex-start;
               width: clamp(300px, 90%, 1920px);
               padding: 8rem 8.7rem;
+
+              .top-side-detail-holder {
+                transform: translateY(9rem);
+              }
+
+              h2.container__title {
+                transform: translateY(-8rem);
+                font-size: 4rem;
+              }
             }
 
             @media screen and (min-width: 1101px) {

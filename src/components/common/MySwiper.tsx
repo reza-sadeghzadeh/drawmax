@@ -149,8 +149,8 @@ const Div = styled.div`
     position: absolute;
     right: 15px;
     z-index: 10;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     background-color: #141010;
   }
 
