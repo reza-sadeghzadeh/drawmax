@@ -71,14 +71,10 @@ const MySwiper: React.FC<SwiperProp> = ({ forSeries, data, cast, loop }) => {
             width: 300,
             slidesPerView: 2,
           },
-          400: {
-            width: 400,
-            slidesPerView: 2,
+          500: {
+            width: 500,
+            slidesPerView: 2.5,
           },
-          // 1500: {
-          //   width: 1500,
-          //   slidesPerView: 7,
-          // },
         }}
         className="flex-center"
         spaceBetween={90}

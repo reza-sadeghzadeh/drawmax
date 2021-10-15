@@ -34,8 +34,8 @@ export default function Activity({ data, foot }: Props): ReactElement {
             <div className="divider" />
           </>
         )}
-        <div className="card-holder flex-center">
-          <ul className="flex-center">
+        <div className="card-holder flex-center ">
+          <ul className="flex-center ">
             {!skeleton &&
               //@ts-ignore
               data.map((d: object) => <li key={d.id}>{<Card movie={d} />}</li>)}

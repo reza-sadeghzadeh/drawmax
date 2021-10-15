@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useRef, useState } from "react";
+import React, { ReactElement } from "react";
 import styled from "styled-components";
 import SwiperCore, { Autoplay } from "swiper";
 import { Navigation, Pagination } from "swiper/core";
@@ -63,27 +63,6 @@ function LandingPageHero({}: Props): ReactElement {
       score: { imdb: 4.5, rt: 123 },
     },
   ];
-  const [movieState, setMovieState] = useState(0);
-
-  const sliderRed = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    sliderRed.current?.childNodes.forEach((s, indx) => {
-      //@ts-ignore
-      s.classList.remove("active");
-      //@ts-ignore
-      if (indx === movieState) s.classList.add("active");
-    });
-  }, [movieState]);
-
-  useEffect(() => {
-    const interv = setInterval(() => {
-      setMovieState((movieState) => (movieState === 3 ? 0 : movieState + 1));
-    }, 10000);
-    return () => {
-      clearTimeout(interv);
-    };
-  }, [movieState]);
 
   return (
     <Div className="flex-center">
