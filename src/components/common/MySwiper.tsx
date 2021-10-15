@@ -64,12 +64,16 @@ const MySwiper: React.FC<SwiperProp> = ({ forSeries, data, cast, loop }) => {
 
   return (
     <Div className={cast ? " " : "flex-center"} ref={btnHolder}>
-      <ReactTooltip effect={"solid"} />
+      <ReactTooltip effect={"float"} />
       <Sswiper
         breakpoints={{
           300: {
             width: 300,
-            slidesPerView: 1.5,
+            slidesPerView: 2,
+          },
+          400: {
+            width: 400,
+            slidesPerView: 2,
           },
           // 1500: {
           //   width: 1500,
@@ -137,19 +141,24 @@ const Div = styled.div`
   position: relative;
   width: 100%;
   justify-content: flex-end;
+  padding-top: 1rem;
 
   svg {
     cursor: pointer;
-    transform: translateY(-93px);
+    transform: translateY(-100px);
     position: absolute;
     right: 15px;
     z-index: 10;
+    width: 30px;
+    height: 30px;
     background-color: #141010;
   }
 
   @media screen and (min-width: 400px) {
     svg {
       right: 30px;
+      width: 40px;
+      height: 40px;
     }
   }
   @media screen and (min-width: 1100px) {

@@ -77,22 +77,16 @@ export const Main = ({ movie, isHero, slug }) => {
   );
 };
 
-// type MyInter = {
-//   isHero?: boolean;
-// };
-
 const Div = styled.section`
   width: 100%;
 
   .container {
     height: clamp(100vh, 110%, 1500px);
-    /* min-height: 100vh; */
     position: relative;
     width: 100%;
     overflow: hidden;
     padding-left: 1rem;
     padding-top: 15rem;
-    /* padding-bottom: 10rem; */
     color: white;
 
     flex-direction: column;
@@ -197,6 +191,7 @@ const Div = styled.section`
       button {
         justify-content: flex-start;
         margin-top: 2.5rem;
+        word-wrap: unset;
 
         :nth-child(2) {
           margin-top: 1.2rem;
@@ -310,17 +305,18 @@ const Div = styled.section`
     ${(p) =>
       !p.isHero
         ? css`
-            width: clamp(300px, 90%, 1920px);
-            height: 440px;
-            overflow: hidden;
-            padding: 7rem 10rem;
-            border-radius: 50px;
-            /* padding-top: 0; */
-
-            ::after,
-            ::before {
+            @media screen and (min-width: 500px) {
+              width: clamp(300px, 90%, 1920px);
               height: 440px;
+              overflow: hidden;
+              padding: 7rem 10rem;
               border-radius: 50px;
+
+              ::after,
+              ::before {
+                height: 440px;
+                border-radius: 50px;
+              }
             }
 
             @media screen and (min-width: 800px) {
