@@ -1,9 +1,12 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { NavLink, useHistory } from "react-router-dom";
 import styled from "styled-components";
+import { SHOW_SEARCH } from "../../store/actions/search";
 
 export const Header = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   return (
     <Nav className="flex-center">
@@ -18,7 +21,9 @@ export const Header = () => {
         <div className="menu">
           <svg
             color="white"
-            onClick={() => history.push("/search")}
+            onClick={() =>
+              dispatch({ type: SHOW_SEARCH, payload: { showSearch: true } })
+            }
             width="17"
             height="17"
             viewBox="0 0 17 17"

@@ -40,13 +40,13 @@ export const Card: React.FC<Props> = ({ movie }) => {
 };
 
 const Div = styled.div`
-  margin: 3rem 1rem;
+  margin: 3rem 0.5rem;
   cursor: pointer;
   padding: 0;
 
   img {
-    width: 176px;
-    height: 284px;
+    width: 156px;
+    height: 254px;
     border-radius: 30px;
     object-fit: cover;
   }
@@ -55,7 +55,7 @@ const Div = styled.div`
     margin-top: 1rem;
     margin-bottom: 1rem;
     font-family: my-font-bold;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     transition: 0.2s ease all;
   }
 
@@ -72,7 +72,7 @@ const Div = styled.div`
 
     p {
       font-family: my-font-bold;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
     }
 
     .score {
@@ -84,11 +84,61 @@ const Div = styled.div`
       }
       span {
         font-family: my-font-light;
-        margin-right: 1.1rem;
+        margin-right: 1rem;
       }
     }
   }
 
+  @media screen and (min-width: 400px) {
+    margin: 3rem 1rem;
+    cursor: pointer;
+    padding: 0;
+
+    img {
+      width: 176px;
+      height: 284px;
+      border-radius: 30px;
+      object-fit: cover;
+    }
+
+    h5 {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      font-family: my-font-bold;
+      font-size: 1.5rem;
+      transition: 0.2s ease all;
+    }
+
+    :hover {
+      .bottom-title {
+        opacity: 1;
+      }
+    }
+
+    .bottom-title {
+      opacity: 0.5;
+      transition: 0.2s ease all;
+      justify-content: space-between;
+
+      p {
+        font-family: my-font-bold;
+        font-size: 1.4rem;
+      }
+
+      .score {
+        img {
+          width: 17px;
+          height: 17px;
+          object-fit: contain;
+          margin-right: 0.5rem;
+        }
+        span {
+          font-family: my-font-light;
+          margin-right: 1.1rem;
+        }
+      }
+    }
+  }
   @media screen and (min-width: 1100px) {
     margin: 3rem 2rem;
 

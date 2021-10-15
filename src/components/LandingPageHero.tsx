@@ -1,7 +1,11 @@
 import React, { ReactElement, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+import SwiperCore, { Autoplay } from "swiper";
+import { Navigation, Pagination } from "swiper/core";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
 import { Main } from "./Main";
-
+SwiperCore.use([Navigation, Autoplay, Pagination]);
 interface Props {}
 
 function LandingPageHero({}: Props): ReactElement {
@@ -80,40 +84,17 @@ function LandingPageHero({}: Props): ReactElement {
       clearTimeout(interv);
     };
   }, [movieState]);
-  //@ts-ignore
-
-  useEffect(() => {
-    //@ts-ignore
-    window.addEventListener("keydown", (e: any) => {
-      switch (e.key) {
-        case "ArrowRight":
-          setMovieState((movieState) =>
-            movieState === 3 ? 0 : movieState + 1
-          );
-          break;
-
-        case "ArrowLeft":
-          setMovieState((movieState) =>
-            movieState === 0 ? 3 : movieState - 1
-          );
-          break;
-
-        default:
-          break;
-      }
-    });
-  }, []);
 
   return (
     <Div className="flex-center">
       <div className="container ">
-        <Main movie={movies[movieState]} isHero={true} slug={false} />
-        <div className="slider flex-center" ref={sliderRed}>
-          <div className="slide" onClick={() => setMovieState(0)}></div>
-          <div className="slide" onClick={() => setMovieState(1)}></div>
-          <div className="slide" onClick={() => setMovieState(2)}></div>
-          <div className="slide" onClick={() => setMovieState(3)}></div>
-        </div>
+        <Swiper pagination={true} loop autoplay>
+          {movies.map((movie) => (
+            <SwiperSlide>
+              <Main movie={movie} isHero={true} slug={false} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </Div>
   );
@@ -126,38 +107,41 @@ const Div = styled.div`
     position: relative;
     width: 100%;
 
-    .slider {
-      background-color: #1414145c;
-      padding: 2rem 2rem;
-      align-self: center;
-      margin-top: 2rem;
-      z-index: 5;
-      transform: translateY(-2rem);
-      display: flex;
-      z-index: 3;
-
-      .slide {
-        width: 54px;
-        cursor: pointer;
-        box-sizing: border-box;
-        height: clamp(2px, 3px, 5px);
-        border-radius: 30px;
-        margin: 0rem 5px;
-        background-color: #747474;
-        position: relative;
-
-        &.active {
-          background-color: #e2e2e2;
-          box-shadow: 0 0 25px 0 #d1d1d1;
-        }
-      }
+    .swiper-pagination {
+      display: none !important;
     }
 
     @media screen and (min-width: 1100px) {
-      .slider {
-        right: 100px;
-        bottom: 50px;
+      .swiper-pagination {
+        display: block !important;
+        background-color: #1414145c;
+        padding: 2rem 2rem;
+        align-self: center;
         position: absolute;
+        margin-top: 2rem;
+        width: unset !important;
+        left: unset !important;
+        right: 50px;
+        z-index: 5;
+        transform: translateY(-5rem);
+        display: flex;
+        z-index: 3;
+
+        .swiper-pagination-bullet {
+          width: 54px;
+          cursor: pointer;
+          box-sizing: border-box;
+          height: clamp(2px, 3px, 5px);
+          border-radius: 30px;
+          margin: 0rem 5px;
+          background-color: #d1d1d1;
+          position: relative;
+
+          &-active {
+            background-color: #a8a8a8;
+            box-shadow: 0 0 10px 0 white;
+          }
+        }
       }
     }
     @media screen and (min-width: 1920px) {

@@ -3,20 +3,23 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import ReactTooltip from "react-tooltip";
 import styled from "styled-components";
+import SwiperCore, { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import {
   SHOW_SKELETON_FOR_LATEST_MOVIES,
   SHOW_SKELETON_FOR_LATEST_SERIES,
 } from "../../store/actions/showSckeleton";
+SwiperCore.use([Navigation]);
 
 interface SwiperProp {
   data: any[];
   cast: boolean;
+  loop: boolean;
   forSeries: boolean;
 }
 
-const MySwiper: React.FC<SwiperProp> = ({ forSeries, data, cast }) => {
+const MySwiper: React.FC<SwiperProp> = ({ forSeries, data, cast, loop }) => {
   const btnHolder = useRef<HTMLDivElement>(null);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -60,18 +63,18 @@ const MySwiper: React.FC<SwiperProp> = ({ forSeries, data, cast }) => {
   };
 
   return (
-    <Div className="flex-center" ref={btnHolder}>
+    <Div className={cast ? " " : "flex-center"} ref={btnHolder}>
       <ReactTooltip effect={"solid"} />
       <Sswiper
         breakpoints={{
-          150: {
-            width: 200,
-            slidesPerView: 1,
-          },
           300: {
             width: 300,
-            slidesPerView: 2,
+            slidesPerView: 1.5,
           },
+          // 1500: {
+          //   width: 1500,
+          //   slidesPerView: 7,
+          // },
         }}
         className="flex-center"
         spaceBetween={90}
@@ -96,14 +99,17 @@ const MySwiper: React.FC<SwiperProp> = ({ forSeries, data, cast }) => {
       </Sswiper>
       {!cast && (
         <svg
+          id="latest-svg"
           data-tip={`show all the ${
             forSeries ? "series" : "movies"
           } for this genre`}
           onClick={() =>
             history.push(
-              `/latest-${forSeries ? "Series" : "Movies"}?genre=${
-                btnHolder.current?.querySelector(".active")?.innerHTML
-              }`
+              `/latest-${
+                forSeries ? "series" : "movies"
+              }?genre=${btnHolder.current
+                ?.querySelector(".active")
+                ?.innerHTML.toLowerCase()}`
             )
           }
           width="40"
@@ -128,34 +134,37 @@ const MySwiper: React.FC<SwiperProp> = ({ forSeries, data, cast }) => {
 };
 
 const Div = styled.div`
-  justify-content: flex-start;
-  align-items: center;
+  position: relative;
+  width: 100%;
+  justify-content: flex-end;
+
   svg {
     cursor: pointer;
-    transform: translateY(1rem);
+    transform: translateY(-93px);
+    position: absolute;
+    right: 15px;
+    z-index: 10;
+    background-color: #141010;
+  }
+
+  @media screen and (min-width: 400px) {
+    svg {
+      right: 30px;
+    }
+  }
+  @media screen and (min-width: 1100px) {
+    svg {
+      right: 70px;
+    }
   }
 `;
 
 const Sswiper = styled(Swiper)`
-  /* width: 80%; */
+  width: 100%;
   z-index: 5;
   justify-content: flex-start;
+  padding-left: 5rem;
   padding-bottom: 3rem;
-  padding-left: 50px;
-
-  .my-siwper {
-    padding: 0 4.5rem;
-  }
-  .btn-holder {
-    margin: 0 3rem;
-  }
-
-  button {
-    margin: 0;
-
-    &.active {
-    }
-  }
 
   .my-cast-siwper {
     margin-right: 2rem !important;
@@ -176,8 +185,8 @@ const Sswiper = styled(Swiper)`
     }
   }
 
-  @media screen and (min-width: 600px) {
-    padding-left: 12rem;
+  @media screen and (min-width: 1100px) {
+    padding-left: 100px;
   }
 `;
 

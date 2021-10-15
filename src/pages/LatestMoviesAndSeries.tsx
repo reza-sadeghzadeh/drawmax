@@ -359,7 +359,8 @@ function LatestMoviesAndSeries({}: Props): ReactElement {
 
   const location = useLocation();
 
-  const query = parse(location.search)["?genre"];
+  const genreQuery = parse(location.search)["?genre"];
+  const movieQuery = location.pathname.split("-")[1];
 
   return (
     <Div className="flex-center">
@@ -379,8 +380,8 @@ function LatestMoviesAndSeries({}: Props): ReactElement {
           />
         </svg>
         <h4 id="finder">
-          {query}
-          <span> {location.pathname.split("-")[1]} </span>
+          {genreQuery[0].toUpperCase() + genreQuery.slice(1)}
+          <span> {movieQuery[0].toUpperCase() + movieQuery.slice(1)} </span>
         </h4>
       </div>
       {_.range(0, dataTimes).map((n) => (

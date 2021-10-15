@@ -12,7 +12,7 @@ function DownloadsCommon({ data }: Props): ReactElement {
         {data.map((q: any) => (
           <li className="flex-center">
             <div className="text flex-center">
-              <h4>my movie </h4> <span>{q}</span>
+              <h5>my movie </h5> <span>{q}</span>
             </div>
             <svg
               width="23"
@@ -45,7 +45,6 @@ const Div = styled.div`
   border-radius: 26px;
   width: clamp(300px, 100%, 1920px);
   padding: 2rem 2rem;
-  margin-top: 5rem;
   margin-bottom: 7em;
 
   ul {
@@ -61,7 +60,7 @@ const Div = styled.div`
       border-radius: 76px;
       margin: 1rem 0;
 
-      h4 {
+      h5 {
         font-size: 1.2rem;
         font-family: my-font-light;
         position: relative;
@@ -113,7 +112,7 @@ const Div = styled.div`
             }
           }
         }
-        h4 {
+        h5 {
           font-size: 2rem;
 
           ::after {

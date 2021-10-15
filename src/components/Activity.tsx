@@ -165,7 +165,20 @@ export default function Activity({}: Props): ReactElement {
     (state: RootState) => state.skeleton.showSkeletonForLatestMovies
   );
 
-  const genres = ["Animations", "Action", "Horror", "Biography", "Drama"];
+  const genres = [
+    "Animations",
+    "Animations",
+    "Animations",
+    "Animations",
+    "Animations",
+    "Animations",
+    "Animations",
+    "Animations",
+
+    "Horror",
+    "Biography",
+    "Drama",
+  ];
 
   return (
     <Div className="flex-center">
@@ -175,7 +188,7 @@ export default function Activity({}: Props): ReactElement {
           <img src="/icons/Activity.svg" />
           <h4> Latest Movies</h4>
         </div>
-        <MySwiper forSeries={false} data={genres} cast={false} />
+        <MySwiper forSeries={false} loop={true} data={genres} cast={false} />
         <div className="divider" />
         <div className="card-holder flex-center">
           <ul className="flex-center">
@@ -264,6 +277,9 @@ const Div = styled(Inherit)`
       display: flex;
       transform: translateX(-5rem);
       overflow: hidden;
+      @media screen and (min-width: 1920px) {
+        width: 1920px;
+      }
     }
   }
   @media screen and (min-width: 2000px) {

@@ -10,7 +10,7 @@ export default function Download({}: Props): ReactElement {
   const data = {
     movieQuality: ["480", "720", "1080"],
     sub: {
-      lanqs: ["English", "Arabic", "French"],
+      lanqs: ["English", "Arabic", "Arabic", "Arabic", "French"],
       qualities: ["720", "1080"],
     },
   };
@@ -24,9 +24,14 @@ export default function Download({}: Props): ReactElement {
         </div>
         <h4>Downlaod Now</h4>
         <DownloadsCommon data={data.movieQuality} />
+        <h4>Download subtitle</h4>
         <div className="sub-buttons flex-center">
-          <h4>Download subtitle</h4>
-          <MySwiper forSeries={false} data={data.sub.lanqs} cast={false} />
+          <MySwiper
+            loop={true}
+            forSeries={false}
+            data={data.sub.lanqs}
+            cast={false}
+          />
         </div>
         <DownloadsCommon data={data.movieQuality} />
       </div>
@@ -37,18 +42,29 @@ export default function Download({}: Props): ReactElement {
 const Div = styled.section`
   .container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     padding-left: 1rem;
     padding-right: 1rem;
     margin-top: 10px;
 
+    h4 {
+      align-self: flex-start;
+      margin-bottom: 3rem;
+      font-family: my-font-bold;
+    }
+
+    svg#latest-svg {
+      display: none;
+    }
+
     .head {
       z-index: 20;
       align-self: center;
-      transform: translateY(-53px) translateX(-2rem);
+      transform: translateY(-53px);
       height: 86px;
-      background-color: #000;
+      background-color: #000000;
       border-radius: 75px;
+
       justify-content: space-around;
       width: clamp(350px, 80%, 1200px);
     }
@@ -57,11 +73,11 @@ const Div = styled.section`
       overflow-x: hidden;
       width: 100%;
       flex-direction: column;
-      align-items: flex-start;
+      margin-bottom: 3rem;
+      /* align-items: flex-end !important; */
 
       h4 {
         align-self: flex-start;
-        margin-bottom: 3rem;
       }
     }
 
@@ -81,23 +97,27 @@ const Div = styled.section`
       }
 
       .head {
-        transform: translateY(-53px) translateX(-1.15rem);
-      }
-      h4 {
-        font-family: my-font-bold;
+        transform: translateY(-53px);
       }
     }
     @media screen and (min-width: 800px) {
       padding-left: 6rem;
       padding-right: 6rem;
+
+      .sub-buttons {
+        width: 50%;
+        flex-direction: column;
+        align-items: flex-end !important;
+        float: right;
+        margin-bottom: 0;
+      }
     }
+
     @media screen and (min-width: 1100px) {
       padding-left: 8.7rem;
 
       .sub-buttons {
-        width: 100%;
         flex-direction: column;
-        align-items: flex-end;
 
         h4 {
           align-self: flex-start;

@@ -103,8 +103,6 @@ a {
 
 a.active {
   color: #f50505;
-
-  /* font-family: my-font-bold; */
 }
 
 span {
@@ -119,4 +117,15 @@ h4 {
 
 ul {
   list-style-type: none;
+}
+
+@media screen and (max-width: 380px) {
+  h4 {
+    font-size: 2rem;
+  }
+  button {
+    padding: 1.2rem 3rem;
+    min-width: 150px;
+    font-size: 12px;
+  }
 }

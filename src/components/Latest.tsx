@@ -28,9 +28,9 @@ export default function Activity({ data, foot }: Props): ReactElement {
               <img src="/icons/Activity.svg" />
               <h4> Latest Series </h4>
             </div>
-            <div className="btn-slide-container">
-              <MySwiper forSeries={true} data={genres} cast={false} />
-            </div>
+
+            <MySwiper loop={true} forSeries={true} data={genres} cast={false} />
+
             <div className="divider" />
           </>
         )}
@@ -90,12 +90,6 @@ export const Inherit = styled.section`
     }
 
     @media screen and (min-width: 1100px) {
-      .btn-slide-container {
-        width: 100%;
-        display: flex;
-        /* justify-content: center; */
-      }
-
       &__header {
         padding-left: 8.7rem;
       }
